@@ -378,6 +378,38 @@ h1, h2, h3 { font-family: var(--fonte-titulo); font-weight: 600; line-height: 1.
 .presencial__cta p { margin-bottom: 26px; font-family: var(--fonte-titulo); font-size: clamp(22px, 2.6vw, 30px); font-weight: 600; line-height: 1.25; }
 .presencial__cta small { display: block; margin-top: 18px; font-size: 14px; color: var(--mudo); }
 
+/* motivos (estilo vitrine) */
+.motivos { padding-bottom: 90px; }
+.motivos__cab { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 40px; }
+.motivos__cab h2 { max-width: 760px; font-size: clamp(32px, 4.2vw, 52px); }
+.motivos__link { color: var(--menta); font-size: 17px; white-space: nowrap; }
+.motivos__link:hover { text-decoration: underline; }
+.motivos__trilho { --lado: max(24px, calc((100vw - 1160px) / 2)); display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: var(--lado); padding: 4px var(--lado) 24px; scrollbar-width: none; outline: none; }
+.motivos__trilho::-webkit-scrollbar { display: none; }
+.motivo { position: relative; flex: 0 0 min(372px, 82vw); min-height: 480px; display: flex; flex-direction: column; padding: 32px 30px; border-radius: 28px; background: #16191e; border: 1px solid rgba(255, 255, 255, 0.06); scroll-snap-align: start; overflow: hidden; transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.motivo:hover { transform: scale(1.015); }
+.motivo__rotulo { font-size: 15px; font-weight: 600; color: var(--suave); }
+.motivo h3 { margin-top: 8px; font-size: 30px; line-height: 1.12; letter-spacing: -0.02em; }
+.motivo__texto { margin-top: 14px; font-size: 16px; line-height: 1.45; color: var(--suave); }
+.motivo__arte { flex: 1; display: grid; place-items: center; padding-top: 28px; }
+.motivo__mais { position: absolute; right: 22px; bottom: 22px; width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; background: rgba(255, 255, 255, 0.12); transition: background 0.2s, transform 0.2s; }
+.motivo__mais svg { width: 18px; height: 18px; fill: none; stroke: var(--texto); stroke-width: 2.2; stroke-linecap: round; }
+.motivo__mais:hover { background: var(--menta); transform: rotate(90deg); }
+.motivo__mais:hover svg { stroke: #04130c; }
+.cartao { position: relative; width: 230px; aspect-ratio: 1.586; border-radius: 16px; background: linear-gradient(135deg, #3a4048 0%, #1d2126 45%, #2b3036 70%, #15181c 100%); box-shadow: 0 30px 50px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.18); transform: rotate(-24deg) skewX(8deg); }
+.cartao::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(115deg, transparent 40%, rgba(0, 229, 153, 0.18) 55%, transparent 70%); }
+.cartao__chip { position: absolute; left: 22px; top: 40%; width: 34px; height: 26px; border-radius: 6px; background: linear-gradient(135deg, #7dffd0, #10b981); }
+.cartao__onda { position: absolute; left: 66px; top: calc(40% + 5px); width: 14px; height: 16px; border-right: 2px solid rgba(255, 255, 255, 0.5); border-radius: 50%; }
+.cartao__marca { position: absolute; right: 16px; bottom: 14px; width: 30px; }
+.cartao__marca img { width: 100%; height: auto; }
+.appico { width: 150px; height: 150px; display: grid; place-items: center; border-radius: 36px; background: linear-gradient(160deg, #3dffbe, #10b981 45%, #0b7f8f); box-shadow: 0 24px 50px rgba(16, 185, 129, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.35); }
+.appico svg { width: 72px; height: 72px; fill: none; stroke: #fff; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.motivos__nav { display: flex; justify-content: flex-end; gap: 12px; }
+.motivos__seta { width: 40px; height: 40px; display: grid; place-items: center; border: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.1); cursor: pointer; transition: background 0.2s, opacity 0.2s; }
+.motivos__seta svg { width: 20px; height: 20px; fill: none; stroke: var(--texto); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.motivos__seta:hover { background: rgba(255, 255, 255, 0.2); }
+.motivos__seta:disabled { opacity: 0.35; cursor: default; }
+
 /* dúvidas */
 .duvidas { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 64px; align-items: start; }
 .faq { display: grid; gap: 12px; }
@@ -471,6 +503,11 @@ h1, h2, h3 { font-family: var(--fonte-titulo); font-weight: 600; line-height: 1.
   .duelo__cta .btn { width: 100%; padding: 18px 20px; font-size: 17px; }
   .pilar { padding: 28px 22px; }
   .presencial__cta .btn { width: 100%; padding: 18px 20px; font-size: 17px; }
+  .motivo { min-height: 430px; padding: 28px 24px; }
+  .motivo h3 { font-size: 26px; }
+  .cartao { width: 190px; }
+  .appico { width: 124px; height: 124px; border-radius: 30px; }
+  .appico svg { width: 60px; height: 60px; }
   .passos, .rodape__grade { grid-template-columns: 1fr; }
   .lado { padding: 28px 24px; }
   .card, .card--grande { padding: 30px 26px; }

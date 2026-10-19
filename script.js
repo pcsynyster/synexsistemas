@@ -7,6 +7,7 @@ const MENSAGENS = {
   duvida: "Olá! Vim pelo site da Synex Sistemas e tenho uma dúvida:",
   modernizar: "Olá! Vi o comparativo no site da Synex Sistemas e quero modernizar o atendimento da minha empresa.",
   presencial: "Olá! Sou da região de Natal/Parnamirim e gostaria de agendar uma reunião presencial para conhecer as soluções da Synex para a minha empresa.",
+  parcelar: "Olá! Vi no site da Synex Sistemas que dá para parcelar em até 12x e quero saber mais sobre o meu projeto.",
   vitrine: "Olá! Vi a demonstração de atendimento automático no site da Synex Sistemas e quero uma automação assim no meu negócio.",
 };
 
@@ -67,7 +68,7 @@ const obsNote = new IntersectionObserver(
 obsNote.observe(note);
 
 const blocos = document.querySelectorAll(
-  ".secao__cab, .lado, .card, .vitrine__palco, .vitrine__cta, .passos li, .duelo__card, .duelo__cta, .pilar, .presencial__cta, .faq, .final__in"
+  ".secao__cab, .lado, .card, .vitrine__palco, .vitrine__cta, .passos li, .duelo__card, .duelo__cta, .pilar, .presencial__cta, .motivos__cab, .faq, .final__in"
 );
 const observador = new IntersectionObserver(
   (entradas) => {
@@ -289,3 +290,19 @@ new IntersectionObserver(
 ).observe(vitrine.celular);
 
 carregarCenario(0);
+
+const trilho = document.getElementById("motivosTrilho");
+const setas = document.querySelectorAll(".motivos__seta");
+const atualizarSetas = () => {
+  setas[0].disabled = trilho.scrollLeft < 8;
+  setas[1].disabled = trilho.scrollLeft + trilho.clientWidth > trilho.scrollWidth - 8;
+};
+setas.forEach((b) =>
+  b.addEventListener("click", () => {
+    const passo = trilho.querySelector(".motivo").offsetWidth + 20;
+    trilho.scrollBy({ left: passo * Number(b.dataset.dir), behavior: reduzMovimento ? "auto" : "smooth" });
+  })
+);
+trilho.addEventListener("scroll", atualizarSetas, { passive: true });
+window.addEventListener("resize", atualizarSetas);
+atualizarSetas();
