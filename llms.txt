@@ -1,0 +1,35 @@
+# Synex Sistemas
+
+> A Synex Sistemas é uma empresa de Natal (RN) que cria sites rápidos, landing pages, catálogos digitais com pedido direto no WhatsApp e sistemas web sob medida para empresas de qualquer segmento. Atende presencialmente Natal, Parnamirim e a região metropolitana, e online todo o Brasil.
+
+## Serviços
+
+- Criação de sites e landing pages de alta performance: carregamento rápido, adaptados para celular e com contato direto pelo WhatsApp.
+- Catálogos digitais inteligentes: o cliente monta o pedido sozinho e envia a lista com itens, valores e endereço para o WhatsApp da loja.
+- Sistemas web e painéis administrativos sob medida: controle de pedidos, agendamentos e estoque.
+- Infraestrutura e suporte: publicação, domínio próprio, certificado SSL e manutenção depois da entrega.
+
+## Como funciona
+
+1. Diagnóstico gratuito do negócio.
+2. Desenvolvimento focado no celular, em velocidade e em conversão.
+3. Testes de velocidade e do pedido no WhatsApp antes de publicar.
+4. Lançamento com domínio próprio e acompanhamento.
+
+## Diferenciais
+
+- Reunião presencial sem custo para empresas da Grande Natal; alinhamento por videochamada para outras cidades.
+- Contato direto com o desenvolvedor responsável, sem intermediários.
+- Orçamento sob medida, com valor fechado antes de começar.
+
+## Projetos no ar
+
+- [MV LEDs](https://mvleds.com.br): catálogo digital de iluminação automotiva com pedido pelo WhatsApp (Parnamirim/RN).
+- [Marrada Sport Club](https://marradasportclub.com.br): site de complexo esportivo com reservas pelo WhatsApp (Parnamirim/RN).
+
+## Contato
+
+- Site: https://synexsistemas.com.br/
+- WhatsApp: +55 84 99142-1656 (https://wa.me/5584991421656)
+- Instagram: https://www.instagram.com/synexsistemas/
+- Localização: Natal, Rio Grande do Norte, Brasil
