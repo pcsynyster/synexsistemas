@@ -291,7 +291,8 @@ function quadro(agora) {
     botoesNicho[vitrine.atual].style.setProperty("--p", Math.min(1, vitrine.tempo / DURACAO));
     if (vitrine.tempo >= DURACAO) carregarCenario((vitrine.atual + 1) % CENARIOS.length);
   }
-  requestAnimationFrame(quadro);
+  vitrine.rodando = vitrine.visivel;
+  if (vitrine.rodando) requestAnimationFrame(quadro);
 }
 
 function pausar(estado) {
@@ -318,9 +319,16 @@ vitrine.nichos.addEventListener("click", (e) => {
   pausar(false);
 });
 
-new IntersectionObserver((entradas) => (vitrine.visivel = entradas[0].isIntersecting), { threshold: 0.3 }).observe(
-  vitrine.celular
-);
+new IntersectionObserver(
+  (entradas) => {
+    vitrine.visivel = entradas[0].isIntersecting;
+    if (vitrine.visivel && !vitrine.rodando) {
+      vitrine.rodando = true;
+      vitrine.ultimo = 0;
+      requestAnimationFrame(quadro);
+    }
+  },
+  { threshold: 0.3 }
+).observe(vitrine.celular);
 
 carregarCenario(0);
-requestAnimationFrame(quadro);
