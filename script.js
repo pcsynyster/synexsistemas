@@ -69,26 +69,6 @@ const obsNote = new IntersectionObserver(
 );
 obsNote.observe(note);
 
-if (!reduzMovimento && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-  const cena = note.querySelector(".note__cena");
-  let quadro = 0;
-  heroPainel.addEventListener("pointermove", (e) => {
-    if (quadro) return;
-    quadro = requestAnimationFrame(() => {
-      const r = heroPainel.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width - 0.5;
-      const y = (e.clientY - r.top) / r.height - 0.5;
-      cena.style.setProperty("--vy", `${-4 + x * 10}deg`);
-      cena.style.setProperty("--vx", `${-38 + y * 6}deg`);
-      quadro = 0;
-    });
-  });
-  heroPainel.addEventListener("pointerleave", () => {
-    cena.style.removeProperty("--vy");
-    cena.style.removeProperty("--vx");
-  });
-}
-
 const blocos = document.querySelectorAll(
   ".secao__cab, .lado, .card, .vitrine__palco, .vitrine__cta, .passos li, .duelo__card, .duelo__cta, .pilar, .presencial__cta, .faq, .final__in"
 );

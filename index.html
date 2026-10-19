@@ -25,7 +25,7 @@
 <link rel="apple-touch-icon" href="assets/icone-180.png">
 <link rel="preload" href="fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=20261019c">
+<link rel="stylesheet" href="styles.css?v=20261019d">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -108,12 +108,21 @@
                       <div class="ide__barra" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" class="ativo"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="6" r="2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="9" r="2"/><path d="M7 8v8M17 11c0 4-6 3-10 5"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg></div>
                       <pre class="ide__codigo"><span class="cl" style="--i:0"><i>1</i><span class="k">import</span> <span class="p">{ </span><span class="f">preco</span><span class="p"> }</span> <span class="k">from</span> <span class="s">&quot;../lib/formato&quot;</span><span class="p">;</span></span><span class="cl" style="--i:1"><i>2</i></span><span class="cl" style="--i:2"><i>3</i><span class="k">export function</span> <span class="f">ProdutoCard</span><span class="p">({ </span><span class="v">item</span><span class="p"> }) {</span></span><span class="cl" style="--i:3"><i>4</i>  <span class="k">return</span> <span class="p">(</span></span><span class="cl" style="--i:4"><i>5</i>    <span class="p">&lt;</span><span class="t">article</span> <span class="a">className</span><span class="p">=</span><span class="s">&quot;rounded-2xl bg-white p-4 shadow-lg&quot;</span><span class="p">&gt;</span></span><span class="cl" style="--i:5"><i>6</i>      <span class="p">&lt;</span><span class="t">img</span> <span class="a">src</span><span class="p">={</span><span class="v">item.foto</span><span class="p">}</span> <span class="a">className</span><span class="p">=</span><span class="s">&quot;h-28 w-full object-contain&quot;</span><span class="p"> /&gt;</span></span><span class="cl" style="--i:6"><i>7</i>      <span class="p">&lt;</span><span class="t">h3</span> <span class="a">className</span><span class="p">=</span><span class="s">&quot;mt-3 font-semibold text-zinc-900&quot;</span><span class="p">&gt;</span><span class="p">{</span><span class="v">item.nome</span><span class="p">}</span><span class="p">&lt;/</span><span class="t">h3</span><span class="p">&gt;</span></span><span class="cl" style="--i:7"><i>8</i>      <span class="p">&lt;</span><span class="t">p</span> <span class="a">className</span><span class="p">=</span><span class="s">&quot;text-lg font-bold text-emerald-600&quot;</span><span class="p">&gt;</span><span class="p">{</span><span class="f">preco</span><span class="p">(</span><span class="v">item.valor</span><span class="p">)}</span><span class="p">&lt;/</span><span class="t">p</span><span class="p">&gt;</span></span><span class="cl" style="--i:8"><i>9</i>      <span class="p">&lt;</span><span class="t">button</span> <span class="a">className</span><span class="p">=</span><span class="s">&quot;mt-3 w-full rounded-xl bg-emerald-500 py-2&quot;</span><span class="p">&gt;</span></span><span class="cl" style="--i:9"><i>10</i>        Pedir no WhatsApp<span class="cursor"></span></span><span class="cl" style="--i:10"><i>11</i>      <span class="p">&lt;/</span><span class="t">button</span><span class="p">&gt;</span></span><span class="cl" style="--i:11"><i>12</i>    <span class="p">&lt;/</span><span class="t">article</span><span class="p">&gt;</span></span><span class="cl" style="--i:12"><i>13</i>  <span class="p">);</span></span><span class="cl" style="--i:13"><i>14</i><span class="p">}</span></span></pre>
                       <div class="ide__previa">
-                        <span class="ide__previa-rotulo">Preview</span>
-                        <div class="produto">
-                          <div class="produto__foto"><svg viewBox="0 0 64 48" aria-hidden="true"><path d="M32 5a12.5 12.5 0 0 0-7.3 22.6c1 .8 1.7 2 1.7 3.4h11.2c0-1.4.7-2.6 1.7-3.4A12.5 12.5 0 0 0 32 5z"/><path d="M27 36h10M28.5 41h7M32 13v6M29 16h6"/></svg></div>
-                          <b class="produto__nome">Lâmpada Smart Wi-Fi</b>
-                          <span class="produto__preco">R$ 59,90</span>
-                          <span class="produto__btn">Pedir no WhatsApp</span>
+                        <span class="ide__previa-rotulo">Preview · mobile</span>
+                        <div class="mcel">
+                          <span class="mcel__ilha"></span>
+                          <div class="mcel__tela">
+                            <div class="msite__topo"><b>Lumen</b><i></i></div>
+                            <div class="msite__banner">
+                              <b>Iluminação que valoriza seu espaço</b>
+                              <span>Ver catálogo</span>
+                            </div>
+                            <div class="msite__grade">
+                              <div class="msite__item"><span class="msite__foto"><svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/><path d="M10 19h4M10.5 21.5h3"/></svg></span><b>Lâmpada Smart</b><em>R$ 59,90</em></div>
+                              <div class="msite__item"><span class="msite__foto"><svg viewBox="0 0 24 24"><path d="M3 17c3-6 6 0 9-6s6 0 9-6"/><circle cx="7" cy="13.5" r="1"/><circle cx="12" cy="11" r="1"/><circle cx="17" cy="8.5" r="1"/></svg></span><b>Fita LED 5 m</b><em>R$ 89,90</em></div>
+                            </div>
+                            <span class="msite__zap">Pedir no WhatsApp</span>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -438,6 +447,6 @@
   <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4C9.4 4 4 8.9 4 15c0 2.6 1 5 2.6 6.9L5.5 27l5.4-1.8c1.6.6 3.3.9 5.1.9 6.6 0 12-4.9 12-11S22.6 4 16 4Z"/></svg>
 </a>
 
-<script src="script.js?v=20261019c" defer></script>
+<script src="script.js?v=20261019d" defer></script>
 </body>
 </html>
