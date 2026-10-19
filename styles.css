@@ -407,24 +407,18 @@ h1, h2, h3 { font-family: var(--fonte-titulo); line-height: 1.1; letter-spacing:
 .passos h3 { font-size: 21px; margin-bottom: 10px; }
 .passos p { color: var(--suave); font-size: 15px; }
 
-/* instagram */
-.insta { padding: 0 0 90px; background: var(--bg); }
-.insta__card { display: flex; align-items: center; gap: 28px; padding: 28px 32px; border-radius: 24px; border: 1px solid var(--borda); background: linear-gradient(120deg, rgba(0, 229, 153, 0.08), rgba(6, 182, 212, 0.05) 50%, rgba(255, 255, 255, 0.02)), #14171c; transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s; }
-.insta__card:hover { border-color: rgba(0, 229, 153, 0.5); transform: translateY(-4px); box-shadow: 0 0 50px rgba(0, 229, 153, 0.12); }
-.insta__avatar { flex: none; width: 84px; height: 84px; padding: 3px; border-radius: 50%; background: linear-gradient(135deg, var(--menta), var(--ciano)); }
-.insta__avatar img { width: 100%; height: 100%; padding: 14px; border-radius: 50%; background: #0d0f12; object-fit: contain; }
-.insta__texto { flex: 1; display: grid; gap: 4px; min-width: 0; }
-.insta__rotulo { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--menta); }
-.insta__arroba { font-family: var(--fonte-titulo); font-size: clamp(24px, 3vw, 34px); line-height: 1.15; color: var(--texto); overflow-wrap: anywhere; }
-.insta__desc { color: var(--suave); font-size: 16px; }
-.insta__btn { flex: none; }
-
 /* chamada final */
 .final { position: relative; padding: 130px 0; text-align: center; overflow: hidden; background: radial-gradient(ellipse 480px 320px at 50% 50%, rgba(0, 229, 153, 0.13), transparent), var(--bg-2); border-top: 1px solid var(--borda); }
 .final__in { position: relative; z-index: 1; max-width: 760px; }
 .final h2 { font-size: clamp(32px, 4.4vw, 54px); font-weight: 700; }
 .final p { margin: 22px 0 38px; color: var(--suave); font-size: 19px; }
 .final .final__fone { margin: 22px 0 0; font-size: 16px; color: var(--mudo); }
+.final__insta { display: inline-grid; gap: 6px; margin-top: 44px; padding-top: 30px; border-top: 1px solid var(--borda); min-width: min(420px, 100%); }
+.final__insta span { font-size: 15px; color: var(--mudo); }
+.final__insta b { font-family: var(--fonte-titulo); font-size: 24px; font-weight: 600; color: var(--texto); transition: color 0.2s; }
+.final__insta b::after { content: "\2197"; display: inline-block; margin-left: 8px; font-size: 0.8em; color: var(--menta); transition: transform 0.2s; }
+.final__insta:hover b { color: var(--menta); }
+.final__insta:hover b::after { transform: translate(2px, -2px); }
 
 /* rodapé */
 .rodape { padding: 70px 0 34px; border-top: 1px solid var(--borda); background: #0a0c0f; }
@@ -491,9 +485,6 @@ h1, h2, h3 { font-family: var(--fonte-titulo); line-height: 1.1; letter-spacing:
   .duelo__cta .btn { width: 100%; padding: 18px 20px; font-size: 17px; }
   .pilar { padding: 28px 22px; }
   .presencial__cta .btn { width: 100%; padding: 18px 20px; font-size: 17px; }
-  .insta { padding-bottom: 70px; }
-  .insta__card { flex-direction: column; text-align: center; gap: 18px; padding: 28px 20px; }
-  .insta__btn { width: 100%; }
   .passos, .rodape__grade { grid-template-columns: 1fr; }
   .lado { padding: 28px 24px; }
   .card, .card--grande { padding: 30px 26px; }

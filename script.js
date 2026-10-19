@@ -110,7 +110,7 @@ if (!reduzMovimento && window.matchMedia("(hover: hover) and (pointer: fine)").m
 }
 
 const blocos = document.querySelectorAll(
-  ".secao__cab, .lado, .card, .vitrine__palco, .vitrine__cta, .passos li, .duelo__card, .duelo__cta, .pilar, .presencial__cta, .insta__card, .faq, .final__in"
+  ".secao__cab, .lado, .card, .vitrine__palco, .vitrine__cta, .passos li, .duelo__card, .duelo__cta, .pilar, .presencial__cta, .faq, .final__in"
 );
 const observador = new IntersectionObserver(
   (entradas) => {
