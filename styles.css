@@ -296,15 +296,8 @@ h1, h2, h3 { font-family: var(--fonte-titulo); font-weight: 600; line-height: 1.
 .segmentos__sub { margin-top: 14px; color: var(--suave); font-size: 18px; }
 
 /* vitrine automática */
-.vitrine__nichos { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
-.nicho { position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 10px; padding: 11px 20px; border-radius: 999px; border: 1px solid var(--borda); background: rgba(255, 255, 255, 0.03); color: var(--suave); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; transition: color 0.3s, border-color 0.3s, background 0.3s; }
-.nicho svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.nicho:hover { color: var(--texto); border-color: rgba(0, 229, 153, 0.4); }
-.nicho[aria-current="true"] { color: var(--menta); border-color: rgba(0, 229, 153, 0.55); background: rgba(0, 229, 153, 0.08); }
-.nicho::after { content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: calc(var(--p, 0) * 100%); background: var(--menta); box-shadow: 0 0 8px var(--menta); opacity: 0; }
-.nicho[aria-current="true"]::after { opacity: 1; }
 
-.vitrine__palco { position: relative; display: grid; place-items: center; background: radial-gradient(circle 300px at 50% 50%, rgba(0, 229, 153, 0.2), rgba(6, 182, 212, 0.08) 45%, transparent); }
+.vitrine__palco { position: relative; margin-top: 8px; display: grid; place-items: center; background: radial-gradient(circle 300px at 50% 50%, rgba(0, 229, 153, 0.2), rgba(6, 182, 212, 0.08) 45%, transparent); }
 .vitrine .celular { cursor: pointer; }
 .vitrine .celular:focus-visible { outline: 3px solid var(--menta); outline-offset: 6px; border-radius: 54px; }
 .vitrine__pausa { position: absolute; z-index: 4; bottom: 86px; left: 50%; padding: 5px 12px; border-radius: 999px; background: rgba(4, 19, 12, 0.85); border: 1px solid rgba(0, 229, 153, 0.5); color: var(--menta); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; opacity: 0; transform: translate(-50%, -6px); transition: opacity 0.25s, transform 0.25s; pointer-events: none; }
@@ -515,8 +508,7 @@ h1, h2, h3 { font-family: var(--fonte-titulo); font-weight: 600; line-height: 1.
   .clientes { gap: 14px 24px; }
   .clientes span { flex-basis: 100%; }
   .celular { width: 300px; height: 600px; }
-  .nicho { padding: 9px 14px; font-size: 13px; }
-  .vitrine__cta p { font-size: 17px; }
+    .vitrine__cta p { font-size: 17px; }
   .vitrine__cta .btn { width: 100%; padding: 18px 20px; font-size: 17px; }
   .segmentos__in { padding: 38px 0; }
   .segmentos__sub { font-size: 16px; }

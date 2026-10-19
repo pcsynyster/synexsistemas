@@ -152,7 +152,6 @@ const DURACAO = 7500;
 
 const vitrine = {
   celular: document.getElementById("vitrineCelular"),
-  nichos: document.getElementById("vitrineNichos"),
   chat: document.getElementById("waChat"),
   nome: document.getElementById("waNome"),
   status: document.getElementById("waStatus"),
@@ -167,10 +166,6 @@ const vitrine = {
   ultimo: 0,
 };
 
-vitrine.nichos.innerHTML = CENARIOS.map(
-  (c, i) => `<button type="button" class="nicho" data-i="${i}">${icone(c.icone)}${c.nicho}</button>`
-).join("");
-const botoesNicho = [...vitrine.nichos.querySelectorAll(".nicho")];
 
 const horaAgora = () => new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
 
@@ -228,10 +223,6 @@ function carregarCenario(i) {
   vitrine.status.textContent = "online";
   vitrine.status.classList.remove("digitando");
   vitrine.celular.classList.remove("troca");
-  botoesNicho.forEach((b, j) => {
-    b.setAttribute("aria-current", String(j === i));
-    b.style.setProperty("--p", 0);
-  });
   vitrine.cta.href = linkWhatsApp(
     `Olá! Vi no site da Synex Sistemas a demonstração de atendimento automático (${c.nicho}) e quero uma automação assim no meu negócio.`
   );
@@ -246,7 +237,6 @@ function quadro(agora) {
       ACOES[ROTEIRO[vitrine.passo][1]]();
       vitrine.passo++;
     }
-    botoesNicho[vitrine.atual].style.setProperty("--p", Math.min(1, vitrine.tempo / DURACAO));
     if (vitrine.tempo >= DURACAO) carregarCenario((vitrine.atual + 1) % CENARIOS.length);
   }
   vitrine.rodando = vitrine.visivel;
@@ -268,13 +258,6 @@ vitrine.celular.addEventListener("keydown", (e) => {
     e.preventDefault();
     pausar(!vitrine.pausado);
   }
-});
-
-vitrine.nichos.addEventListener("click", (e) => {
-  const b = e.target.closest(".nicho");
-  if (!b) return;
-  carregarCenario(Number(b.dataset.i));
-  pausar(false);
 });
 
 new IntersectionObserver(
