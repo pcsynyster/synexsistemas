@@ -46,24 +46,6 @@ document.addEventListener("keydown", (e) => {
 document.getElementById("ano").textContent = new Date().getFullYear();
 
 const reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const ease = (x) => 1 - Math.pow(1 - x, 3);
-
-function contar(el) {
-  const alvo = parseFloat(el.dataset.conta);
-  const dec = parseInt(el.dataset.dec || "0", 10);
-  if (reduzMovimento) {
-    el.textContent = alvo.toFixed(dec);
-    return;
-  }
-  const inicio = performance.now();
-  const passo = (agora) => {
-    const p = Math.min(1, (agora - inicio) / 1600);
-    el.textContent = (alvo * ease(p)).toFixed(dec);
-    if (p < 1) requestAnimationFrame(passo);
-  };
-  requestAnimationFrame(passo);
-}
-
 const note = document.getElementById("note");
 const heroPainel = document.getElementById("heroPainel");
 const pedidoFlutua = heroPainel.querySelector(".flutua--pedido");
@@ -73,8 +55,6 @@ function abrirNote() {
   note.classList.add("aberto");
   setTimeout(() => {
     note.classList.add("ligado");
-    document.getElementById("scoreAnel").style.strokeDashoffset = 0;
-    note.querySelectorAll("[data-conta]").forEach(contar);
   }, t(900));
   setTimeout(() => pedidoFlutua.classList.add("mostra"), t(3200));
 }

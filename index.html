@@ -25,7 +25,7 @@
 <link rel="apple-touch-icon" href="assets/icone-180.png">
 <link rel="preload" href="fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=20261019b">
+<link rel="stylesheet" href="styles.css?v=20261019c">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -92,35 +92,35 @@
       </div>
 
       <div class="hero__painel" id="heroPainel">
-        <div class="note" id="note" aria-label="Notebook exibindo o painel de desempenho synex.painel">
+        <div class="note" id="note" aria-label="Notebook exibindo o código de um card de produto e a prévia ao vivo">
           <div class="note__cena">
             <div class="note__tampa">
               <div class="note__frente">
                 <span class="note__camera" aria-hidden="true"></span>
                 <div class="note__tela">
-                  <div class="tela">
-                    <div class="tela__barra">
+                  <div class="ide">
+                    <div class="ide__topo">
                       <i></i><i></i><i></i>
-                      <span class="tela__url"><b aria-hidden="true"></b>synex.painel/desempenho</span>
+                      <span class="ide__aba ide__aba--ativa">ProdutoCard.jsx</span>
+                      <span class="ide__aba">Catalogo.jsx</span>
                     </div>
-                    <div class="tela__corpo">
-                      <div class="score">
-                        <svg viewBox="0 0 120 120" aria-hidden="true">
-                          <circle class="score__fundo" cx="60" cy="60" r="52"/>
-                          <circle class="score__valor" id="scoreAnel" cx="60" cy="60" r="52"/>
-                        </svg>
-                        <div class="score__num"><b data-conta="100">0</b><span>/100</span></div>
-                        <p>Velocidade</p>
+                    <div class="ide__corpo">
+                      <div class="ide__barra" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" class="ativo"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="6" r="2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="9" r="2"/><path d="M7 8v8M17 11c0 4-6 3-10 5"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg></div>
+                      <pre class="ide__codigo" aria-label="Código de um componente de card de produto em React com Tailwind CSS"><span class="cl" style="--i:0"><i>1</i><span class="k">import</span> <span class="p">{ </span><span class="f">preco</span><span class="p"> }</span> <span class="k">from</span> <span class="s">&quot;../lib/formato&quot;</span><span class="p">;</span></span><span class="cl" style="--i:1"><i>2</i></span><span class="cl" style="--i:2"><i>3</i><span class="k">export function</span> <span class="f">ProdutoCard</span><span class="p">({ </span><span class="v">item</span><span class="p"> }) {</span></span><span class="cl" style="--i:3"><i>4</i>  <span class="k">return</span> <span class="p">(</span></span><span class="cl" style="--i:4"><i>5</i>    <span class="p">&lt;</span><span class="t">article</span> <span class="a">className</span><span class="p">=</span><span class="s">&quot;rounded-2xl bg-white p-4 shadow-lg&quot;</span><span class="p">&gt;</span></span><span class="cl" style="--i:5"><i>6</i>      <span class="p">&lt;</span><span class="t">img</span> <span class="a">src</span><span class="p">={</span><span class="v">item.foto</span><span class="p">}</span> <span class="a">className</span><span class="p">=</span><span class="s">&quot;h-28 w-full object-contain&quot;</span><span class="p"> /&gt;</span></span><span class="cl" style="--i:6"><i>7</i>      <span class="p">&lt;</span><span class="t">h3</span> <span class="a">className</span><span class="p">=</span><span class="s">&quot;mt-3 font-semibold text-zinc-900&quot;</span><span class="p">&gt;</span><span class="p">{</span><span class="v">item.nome</span><span class="p">}</span><span class="p">&lt;/</span><span class="t">h3</span><span class="p">&gt;</span></span><span class="cl" style="--i:7"><i>8</i>      <span class="p">&lt;</span><span class="t">p</span> <span class="a">className</span><span class="p">=</span><span class="s">&quot;text-lg font-bold text-emerald-600&quot;</span><span class="p">&gt;</span><span class="p">{</span><span class="f">preco</span><span class="p">(</span><span class="v">item.valor</span><span class="p">)}</span><span class="p">&lt;/</span><span class="t">p</span><span class="p">&gt;</span></span><span class="cl" style="--i:8"><i>9</i>      <span class="p">&lt;</span><span class="t">button</span> <span class="a">className</span><span class="p">=</span><span class="s">&quot;mt-3 w-full rounded-xl bg-emerald-500 py-2&quot;</span><span class="p">&gt;</span></span><span class="cl" style="--i:9"><i>10</i>        Pedir no WhatsApp<span class="cursor"></span></span><span class="cl" style="--i:10"><i>11</i>      <span class="p">&lt;/</span><span class="t">button</span><span class="p">&gt;</span></span><span class="cl" style="--i:11"><i>12</i>    <span class="p">&lt;/</span><span class="t">article</span><span class="p">&gt;</span></span><span class="cl" style="--i:12"><i>13</i>  <span class="p">);</span></span><span class="cl" style="--i:13"><i>14</i><span class="p">}</span></span></pre>
+                      <div class="ide__previa">
+                        <span class="ide__previa-rotulo">Preview</span>
+                        <div class="produto">
+                          <div class="produto__foto"><svg viewBox="0 0 64 48" aria-hidden="true"><path d="M32 5a12.5 12.5 0 0 0-7.3 22.6c1 .8 1.7 2 1.7 3.4h11.2c0-1.4.7-2.6 1.7-3.4A12.5 12.5 0 0 0 32 5z"/><path d="M27 36h10M28.5 41h7M32 13v6M29 16h6"/></svg></div>
+                          <b class="produto__nome">Lâmpada Smart Wi-Fi</b>
+                          <span class="produto__preco">R$ 59,90</span>
+                          <span class="produto__btn">Pedir no WhatsApp</span>
+                        </div>
                       </div>
-                      <div class="metricas">
-                        <div class="metrica"><span>Carregamento</span><b><em data-conta="0.6" data-dec="1">0.0</em>s</b></div>
-                        <div class="metrica"><span>Pedidos hoje</span><b><em data-conta="38">0</em></b></div>
-                        <div class="metrica"><span>Cliques no WhatsApp</span><b><em data-conta="142">0</em></b></div>
-                      </div>
-                      <div class="grafico" role="img" aria-label="Gráfico de pedidos por dia na semana">
-                        <i style="--h:34%" data-v="Seg · 13"></i><i style="--h:52%" data-v="Ter · 20"></i><i style="--h:44%" data-v="Qua · 17"></i><i style="--h:68%" data-v="Qui · 26"></i>
-                        <i style="--h:58%" data-v="Sex · 22"></i><i style="--h:82%" data-v="Sáb · 31"></i><i style="--h:100%" data-v="Dom · 38"></i>
-                      </div>
+                    </div>
+                    <div class="ide__status">
+                      <span class="ide__branch">main</span>
+                      <span class="ide__ok">Compiled successfully</span>
+                      <span class="ide__lh">Lighthouse <b>98</b></span>
                     </div>
                   </div>
                 </div>
@@ -140,7 +140,7 @@
           <span class="flutua__ponto"></span>
           <div><b>Novo pedido</b><small>chegou pelo WhatsApp</small></div>
         </div>
-        <p class="nota">Valores ilustrativos do painel.</p>
+        <p class="nota">Tela ilustrativa.</p>
       </div>
     </div>
   </section>
@@ -438,6 +438,6 @@
   <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4C9.4 4 4 8.9 4 15c0 2.6 1 5 2.6 6.9L5.5 27l5.4-1.8c1.6.6 3.3.9 5.1.9 6.6 0 12-4.9 12-11S22.6 4 16 4Z"/></svg>
 </a>
 
-<script src="script.js?v=20261019b" defer></script>
+<script src="script.js?v=20261019c" defer></script>
 </body>
 </html>
