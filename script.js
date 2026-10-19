@@ -47,8 +47,6 @@ document.getElementById("ano").textContent = new Date().getFullYear();
 
 const reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const note = document.getElementById("note");
-const heroPainel = document.getElementById("heroPainel");
-const pedidoFlutua = heroPainel.querySelector(".flutua--pedido");
 
 function abrirNote() {
   const t = (ms) => (reduzMovimento ? 0 : ms);
@@ -56,7 +54,6 @@ function abrirNote() {
   setTimeout(() => {
     note.classList.add("ligado");
   }, t(900));
-  setTimeout(() => pedidoFlutua.classList.add("mostra"), t(3200));
 }
 
 const obsNote = new IntersectionObserver(
