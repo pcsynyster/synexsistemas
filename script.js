@@ -46,25 +46,75 @@ document.addEventListener("keydown", (e) => {
 document.getElementById("ano").textContent = new Date().getFullYear();
 
 const reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const note = document.getElementById("note");
+const cena = document.querySelector(".cena");
 
-function abrirNote() {
-  const t = (ms) => (reduzMovimento ? 0 : ms);
-  note.classList.add("aberto");
-  setTimeout(() => {
-    note.classList.add("ligado");
-  }, t(900));
+if (cena && !reduzMovimento) {
+  const el = {
+    frase1: cena.querySelector('[data-frase="1"]'),
+    frase2: cena.querySelector('[data-frase="2"]'),
+    final: cena.querySelector('[data-frase="3"]'),
+    mac: document.getElementById("mac"),
+    fechado: cena.querySelector(".mac__foto--fechado"),
+    aberto: cena.querySelector(".mac__foto--aberto"),
+    tela: cena.querySelector(".mac__tela"),
+    site: cena.querySelector(".mac__site"),
+    siteImg: cena.querySelector(".mac__site img"),
+    legenda: cena.querySelector(".cena__legenda"),
+    rolar: cena.querySelector(".cena__rolar"),
+  };
+
+  const limitar = (v) => Math.min(Math.max(v, 0), 1);
+  const suave = (v) => v * v * (3 - 2 * v);
+  const trecho = (p, a, b) => suave(limitar((p - a) / (b - a)));
+
+  const mostrar = (alvo, valor, deslocamento) => {
+    alvo.style.opacity = valor;
+    alvo.style.transform = `translateY(${deslocamento}px)`;
+    alvo.style.visibility = valor > 0.01 ? "visible" : "hidden";
+  };
+
+  let pedido = false;
+
+  function desenhar() {
+    pedido = false;
+    const total = cena.offsetHeight - window.innerHeight;
+    const p = limitar(-cena.getBoundingClientRect().top / total);
+
+    const sai1 = trecho(p, 0.12, 0.22);
+    const abre = trecho(p, 0.12, 0.3);
+    const liga = trecho(p, 0.26, 0.4);
+    const entra2 = trecho(p, 0.26, 0.36);
+    const sai2 = trecho(p, 0.54, 0.62);
+    const site = trecho(p, 0.46, 0.56);
+    const rola = trecho(p, 0.56, 0.96);
+    const entra3 = trecho(p, 0.6, 0.72);
+    const recua = trecho(p, 0.58, 0.74);
+
+    mostrar(el.frase1, 1 - sai1, -40 * sai1);
+    mostrar(el.frase2, entra2 * (1 - sai2), 30 * (1 - entra2) - 40 * sai2);
+    mostrar(el.final, entra3, 30 * (1 - entra3));
+
+    const escala = (0.94 + 0.06 * abre) * (1 - 0.36 * recua);
+    el.mac.style.transform = `translateX(-50%) scale(${escala.toFixed(4)})`;
+    el.fechado.style.opacity = abre < 1 ? 1 : 0;
+    el.aberto.style.opacity = abre;
+    el.tela.style.opacity = liga;
+    el.site.style.opacity = site;
+    el.siteImg.style.transform = `translateY(${(-77.78 * rola).toFixed(3)}%)`;
+    el.legenda.style.opacity = trecho(p, 0.64, 0.74);
+    el.rolar.style.opacity = 1 - trecho(p, 0, 0.05);
+  }
+
+  const agendar = () => {
+    if (pedido) return;
+    pedido = true;
+    requestAnimationFrame(desenhar);
+  };
+
+  window.addEventListener("scroll", agendar, { passive: true });
+  window.addEventListener("resize", agendar);
+  desenhar();
 }
-
-const obsNote = new IntersectionObserver(
-  (entradas) => {
-    if (!entradas[0].isIntersecting) return;
-    obsNote.disconnect();
-    setTimeout(abrirNote, reduzMovimento ? 0 : 250);
-  },
-  { threshold: 0.35 }
-);
-obsNote.observe(note);
 
 const blocos = document.querySelectorAll(
   ".secao__cab, .barra, .spec, .card, .vitrine__palco, .vitrine__cta, .etapa, .pilar, .presencial__cta, .motivos__cab, .faq, .final__in"

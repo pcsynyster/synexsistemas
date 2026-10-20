@@ -1,0 +1,6 @@
+.cena { height: auto; }
+.cena__palco { position: relative; height: auto; display: flex; flex-direction: column; align-items: center; padding: 96px 0 40px; }
+.cena__textos, .cena__final, .mac, .cena__legenda { position: relative; inset: auto; }
+.cena__frase, .cena__rolar, .mac__foto--fechado { display: none; }
+.cena__final, .mac__foto--aberto, .mac__tela, .mac__site, .cena__legenda { opacity: 1; visibility: visible; }
+.mac { left: auto; bottom: auto; transform: none; margin-top: 10px; }
