@@ -340,23 +340,6 @@ function quadro(agora) {
   if (vitrine.rodando) requestAnimationFrame(quadro);
 }
 
-function pausar(estado) {
-  vitrine.pausado = estado;
-  vitrine.celular.classList.toggle("pausado", estado);
-}
-
-vitrine.celular.addEventListener("pointerenter", (e) => e.pointerType === "mouse" && pausar(true));
-vitrine.celular.addEventListener("pointerleave", (e) => e.pointerType === "mouse" && pausar(false));
-vitrine.celular.addEventListener("click", (e) => {
-  if (e.pointerType !== "mouse") pausar(!vitrine.pausado);
-});
-vitrine.celular.addEventListener("keydown", (e) => {
-  if (e.key === " " || e.key === "Enter") {
-    e.preventDefault();
-    pausar(!vitrine.pausado);
-  }
-});
-
 new IntersectionObserver(
   (entradas) => {
     vitrine.visivel = entradas[0].isIntersecting;

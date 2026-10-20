@@ -220,11 +220,8 @@ main { padding-top: 56px; }
 /* vitrine automática */
 
 .vitrine__palco { position: relative; margin-top: 8px; display: grid; place-items: center; background: radial-gradient(circle 300px at 50% 50%, rgba(var(--acento-rgb), 0.2), rgba(var(--acento-rgb), 0.08) 45%, transparent); }
-.vitrine .celular { cursor: pointer; }
+
 .vitrine .celular:focus-visible { outline: 3px solid var(--menta); outline-offset: 6px; border-radius: 54px; }
-.vitrine__pausa { position: absolute; z-index: 4; bottom: 86px; left: 50%; padding: 5px 12px; border-radius: 999px; background: rgba(4, 19, 12, 0.85); border: 1px solid rgba(var(--acento-rgb), 0.5); color: var(--menta); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; opacity: 0; transform: translate(-50%, -6px); transition: opacity 0.25s, transform 0.25s; pointer-events: none; }
-.celular.pausado .vitrine__pausa { opacity: 1; transform: translate(-50%, 0); }
-.celular.pausado * { animation-play-state: paused !important; }
 .wa__chat, .wa__topo .wa__contato, .wa__avatar { transition: opacity 0.45s ease; }
 .celular.troca .wa__chat, .celular.troca .wa__contato, .celular.troca .wa__avatar { opacity: 0; }
 
@@ -539,3 +536,34 @@ main { padding-top: 56px; }
 }
 
 .topo.sobre-cena { background: rgba(0, 0, 0, 0.92); backdrop-filter: none; -webkit-backdrop-filter: none; }
+
+.celular { background: linear-gradient(150deg, #f4f4f2, #d9d9d6 35%, #f7f7f5 60%, #c9c9c6); box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5), inset 0 0 0 2px rgba(255, 255, 255, 0.7), inset 0 0 0 4px rgba(0, 0, 0, 0.06), 0 50px 100px rgba(0, 0, 0, 0.55); }
+.celular::before { background: #d4d4d1; }
+.celular__tela { background: #efeae2; box-shadow: 0 0 0 4px #0a0a0a; }
+.wa__status { background: #f6f6f6; color: #111b21; }
+.wa__sinal i { background: #111b21; }
+.wa__topo { background: #f6f6f6; border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+.wa__voltar { border-color: #007aff; }
+.wa__avatar { background: linear-gradient(140deg, #dfe5e7, #c4cdd1); }
+.wa__avatar svg { stroke: #54656f; }
+.wa__contato b { color: #111b21; }
+.wa__contato small { color: #667781; }
+.wa__contato small.digitando { color: #1fa855; }
+.wa__chat { background-color: #efeae2; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160' fill='none' stroke='%23c9bfae' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' opacity='.55'%3E%3Ccircle cx='22' cy='24' r='9'/%3E%3Cpath d='M18 24h8M22 20v8'/%3E%3Cpath d='M60 14l6 12 13 2-9 9 2 13-12-6-12 6 2-13-9-9 13-2z'/%3E%3Crect x='108' y='14' width='26' height='20' rx='5'/%3E%3Cpath d='M114 34l-4 8 10-8'/%3E%3Cpath d='M16 78c6-10 18-10 24 0'/%3E%3Ccircle cx='22' cy='70' r='2'/%3E%3Ccircle cx='34' cy='70' r='2'/%3E%3Cpath d='M70 66h22l-3 22H73z'/%3E%3Cpath d='M75 66v-4a6 6 0 0 1 12 0v4'/%3E%3Cpath d='M118 64c8 0 14 6 14 14s-14 20-14 20-14-12-14-20 6-14 14-14z'/%3E%3Ccircle cx='118' cy='78' r='4'/%3E%3Cpath d='M14 118l14 14M28 118l-14 14'/%3E%3Cpath d='M58 122c0-8 14-8 14 0 0-8 14-8 14 0 0 10-14 18-14 18s-14-8-14-18z'/%3E%3Ccircle cx='122' cy='128' r='12'/%3E%3Cpath d='M122 120v8l5 4'/%3E%3C/svg%3E"); background-size: 160px 160px; }
+.wa__dia { background: #ffffff; color: #54656f; box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13); }
+.balao { color: #111b21; box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13); }
+.balao--eu { background: #d9fdd3; }
+.balao--ele { background: #ffffff; }
+.balao__hora { color: #667781; }
+.checks::before, .checks::after { border-color: #8696a0; }
+.checks.lido::before, .checks.lido::after { border-color: #53bdeb; }
+.balao__div { background: rgba(11, 20, 26, 0.12); }
+.balao__acao { border-top-color: rgba(11, 20, 26, 0.1); color: #027eb5; }
+.digitando-bolha { background: #ffffff; box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13); }
+.digitando-bolha i { background: #8696a0; }
+.wa__compor { background: #f6f6f6; border-top: 1px solid rgba(0, 0, 0, 0.06); }
+.wa__campo { background: #ffffff; color: #8696a0; border: 1px solid rgba(0, 0, 0, 0.08); }
+.wa__enviar { background-color: #1fa855; }
+@media (max-width: 960px), (hover: none) {
+  .celular { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5), inset 0 0 0 2px rgba(255, 255, 255, 0.7), 0 30px 60px rgba(0, 0, 0, 0.5); }
+}
