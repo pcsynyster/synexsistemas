@@ -67,26 +67,36 @@ if (cena && !reduzMovimento) {
   const suave = (v) => v * v * (3 - 2 * v);
   const trecho = (p, a, b) => suave(limitar((p - a) / (b - a)));
 
-  const mostrar = (alvo, valor, deslocamento) => {
-    alvo.style.opacity = valor;
-    alvo.style.transform = `translateY(${deslocamento}px)`;
-    alvo.style.visibility = valor > 0.01 ? "visible" : "hidden";
-  };
+  let inicio = 0;
+  let percurso = 1;
+  let alvo = 0;
+  let atual = 0;
+  let ultimoQuadro = 0;
+  let rodando = false;
+  const visiveis = new Map();
 
-  let pedido = false;
+  function medir() {
+    inicio = cena.getBoundingClientRect().top + window.scrollY;
+    percurso = Math.max(cena.offsetHeight - window.innerHeight, 1);
+  }
 
-  function desenhar() {
-    pedido = false;
-    const total = cena.offsetHeight - window.innerHeight;
-    const p = limitar(-cena.getBoundingClientRect().top / total);
+  const lerAlvo = () => limitar((window.scrollY - inicio) / percurso);
 
+  function mostrar(alvoEl, valor, deslocamento) {
+    alvoEl.style.opacity = valor.toFixed(3);
+    alvoEl.style.transform = `translate3d(0, ${deslocamento.toFixed(1)}px, 0)`;
+    const vis = valor > 0.01;
+    if (visiveis.get(alvoEl) !== vis) {
+      visiveis.set(alvoEl, vis);
+      alvoEl.style.visibility = vis ? "visible" : "hidden";
+    }
+  }
+
+  function desenhar(p) {
     const sai1 = trecho(p, 0.12, 0.22);
     const abre = trecho(p, 0.12, 0.3);
-    const liga = trecho(p, 0.26, 0.4);
     const entra2 = trecho(p, 0.26, 0.36);
     const sai2 = trecho(p, 0.54, 0.62);
-    const site = trecho(p, 0.46, 0.56);
-    const rola = trecho(p, 0.56, 0.96);
     const entra3 = trecho(p, 0.6, 0.72);
     const recua = trecho(p, 0.58, 0.74);
 
@@ -95,25 +105,52 @@ if (cena && !reduzMovimento) {
     mostrar(el.final, entra3, 30 * (1 - entra3));
 
     const escala = (0.94 + 0.06 * abre) * (1 - 0.36 * recua);
-    el.mac.style.transform = `translateX(-50%) scale(${escala.toFixed(4)})`;
+    el.mac.style.transform = `translate3d(-50%, 0, 0) scale(${escala.toFixed(4)})`;
     el.fechado.style.opacity = abre < 1 ? 1 : 0;
-    el.aberto.style.opacity = abre;
-    el.tela.style.opacity = liga;
-    el.site.style.opacity = site;
-    el.siteImg.style.transform = `translateY(${(-77.78 * rola).toFixed(3)}%)`;
-    el.legenda.style.opacity = trecho(p, 0.64, 0.74);
-    el.rolar.style.opacity = 1 - trecho(p, 0, 0.05);
+    el.aberto.style.opacity = abre.toFixed(3);
+    el.tela.style.opacity = trecho(p, 0.26, 0.4).toFixed(3);
+    el.site.style.opacity = trecho(p, 0.46, 0.56).toFixed(3);
+    el.siteImg.style.transform = `translate3d(0, ${(-77.78 * trecho(p, 0.56, 0.96)).toFixed(3)}%, 0)`;
+    el.legenda.style.opacity = trecho(p, 0.64, 0.74).toFixed(3);
+    el.rolar.style.opacity = (1 - trecho(p, 0, 0.05)).toFixed(3);
+    topo.classList.toggle("sobre-cena", window.scrollY < inicio + percurso);
   }
 
-  const agendar = () => {
-    if (pedido) return;
-    pedido = true;
-    requestAnimationFrame(desenhar);
-  };
+  function quadro(agora) {
+    const dt = Math.min((agora - (ultimoQuadro || agora)) / 1000, 0.05);
+    ultimoQuadro = agora;
+    atual += (alvo - atual) * (1 - Math.exp(-dt / 0.11));
+    if (Math.abs(alvo - atual) < 0.0004) atual = alvo;
+    desenhar(atual);
+    if (atual !== alvo) {
+      requestAnimationFrame(quadro);
+    } else {
+      rodando = false;
+      ultimoQuadro = 0;
+    }
+  }
 
-  window.addEventListener("scroll", agendar, { passive: true });
-  window.addEventListener("resize", agendar);
-  desenhar();
+  function aoRolar() {
+    alvo = lerAlvo();
+    if (rodando) return;
+    rodando = true;
+    requestAnimationFrame(quadro);
+  }
+
+  window.addEventListener("scroll", aoRolar, { passive: true });
+  window.addEventListener("resize", () => {
+    medir();
+    aoRolar();
+  });
+  window.addEventListener("load", () => {
+    medir();
+    aoRolar();
+    [el.aberto, el.siteImg, cena.querySelector(".mac__fundo")].forEach((img) => img.decode?.().catch(() => {}));
+  });
+
+  medir();
+  atual = alvo = lerAlvo();
+  desenhar(atual);
 }
 
 const blocos = document.querySelectorAll(
