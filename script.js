@@ -67,7 +67,7 @@ const obsNote = new IntersectionObserver(
 obsNote.observe(note);
 
 const blocos = document.querySelectorAll(
-  ".secao__cab, .barra, .spec, .card, .vitrine__palco, .vitrine__cta, .passos li, .etapa, .pilar, .presencial__cta, .motivos__cab, .faq, .final__in"
+  ".secao__cab, .barra, .spec, .card, .vitrine__palco, .vitrine__cta, .etapa, .pilar, .presencial__cta, .motivos__cab, .faq, .final__in"
 );
 const observador = new IntersectionObserver(
   (entradas) => {
