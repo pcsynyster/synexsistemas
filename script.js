@@ -116,14 +116,14 @@ if (cena && !reduzMovimento) {
     topo.classList.toggle("sobre-cena", window.scrollY < inicio + percurso);
   }
 
-  function quadro(agora) {
+  function quadroAbertura(agora) {
     const dt = Math.min((agora - (ultimoQuadro || agora)) / 1000, 0.05);
     ultimoQuadro = agora;
     atual += (alvo - atual) * (1 - Math.exp(-dt / 0.11));
     if (Math.abs(alvo - atual) < 0.0004) atual = alvo;
     desenhar(atual);
     if (atual !== alvo) {
-      requestAnimationFrame(quadro);
+      requestAnimationFrame(quadroAbertura);
     } else {
       rodando = false;
       ultimoQuadro = 0;
@@ -134,7 +134,7 @@ if (cena && !reduzMovimento) {
     alvo = lerAlvo();
     if (rodando) return;
     rodando = true;
-    requestAnimationFrame(quadro);
+    requestAnimationFrame(quadroAbertura);
   }
 
   window.addEventListener("scroll", aoRolar, { passive: true });
