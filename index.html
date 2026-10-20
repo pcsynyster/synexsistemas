@@ -27,7 +27,7 @@
 <link rel="icon" href="assets/icone-48.png" type="image/png" sizes="48x48">
 <link rel="icon" href="assets/icone-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="assets/icone-180.png">
-<link rel="stylesheet" href="styles.css?v=20261020a">
+<link rel="stylesheet" href="styles.css?v=20261020b">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -239,35 +239,43 @@
     </div>
   </section>
 
-  <section class="secao claro claro--cinza" id="diferenciais">
+  <section class="secao specs" id="diferenciais">
     <div class="wrap">
       <header class="secao__cab">
-        <p class="rotulo">Diferenciais</p>
-        <h2>O custo do amadorismo</h2>
-        <p>Um site comum parece funcionar, mas cada segundo de espera e cada botão escondido é cliente indo para o concorrente.</p>
+        <p class="rotulo specs__olho">Engenharia Web</p>
+        <h2>Construído para nunca falhar.</h2>
+        <p>Deixe para trás plataformas lentas, pesadas e vulneráveis. Desenvolvemos arquiteturas modernas preparadas para escala e segurança contínua.</p>
       </header>
 
-      <div class="comparar" id="comparar">
-        <article class="lado lado--comum">
-          <h3>O site comum</h3>
-          <div class="carga" aria-hidden="true"><i data-alvo="38"></i></div>
-          <p class="lado__tempo"><b>6s</b> para abrir no 4G</p>
-          <ul>
-            <li>Sem adaptação para celular</li>
-            <li>Botão de contato escondido</li>
-            <li>Mais da metade dos visitantes desiste antes de carregar</li>
-          </ul>
-        </article>
-        <article class="lado lado--synex">
-          <h3>O padrão Synex</h3>
-          <div class="carga" aria-hidden="true"><i data-alvo="100"></i></div>
-          <p class="lado__tempo"><b>0.8s</b> para abrir no 4G</p>
-          <ul>
-            <li>Arquitetura pensada para conversão</li>
-            <li>Checkout direto no WhatsApp</li>
-            <li>Pedido chega formatado, pronto para faturar</li>
-          </ul>
-        </article>
+      <div class="specs__barras" id="comparar">
+        <div class="barra barra--synex">
+          <div class="barra__topo"><span>Engenharia Synex (Código Nativo)</span><b>0.4s</b></div>
+          <div class="barra__trilho"><i data-alvo="95"></i></div>
+          <p>Carregamento instantâneo via edge computing e arquitetura limpa.</p>
+        </div>
+        <div class="barra barra--comum">
+          <div class="barra__topo"><span>Criadores Convencionais / WordPress</span><b>5.8s</b></div>
+          <div class="barra__trilho"><i data-alvo="20"></i></div>
+          <p>Média com dezenas de plugins instalados e servidores compartilhados lentos.</p>
+        </div>
+      </div>
+
+      <div class="specs__grade">
+        <div class="spec">
+          <b class="spec__num">99.9%</b>
+          <h3>Disponibilidade Contínua</h3>
+          <p>Infraestrutura distribuída globalmente. A sua página não cai com picos de tráfego nem sofre com servidores instáveis.</p>
+        </div>
+        <div class="spec">
+          <b class="spec__num">Zero</b>
+          <h3>Dependências Frágeis</h3>
+          <p>Sem plugins vulneráveis a invasão, brechas de segurança ou atualizações forçadas que quebram o layout do seu site.</p>
+        </div>
+        <div class="spec">
+          <b class="spec__num">100%</b>
+          <h3>Arquitetura Dedicada</h3>
+          <p>Desenvolvimento estruturado para a realidade da sua operação, com velocidade máxima em redes 4G e 5G.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -566,6 +574,6 @@
   <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4C9.4 4 4 8.9 4 15c0 2.6 1 5 2.6 6.9L5.5 27l5.4-1.8c1.6.6 3.3.9 5.1.9 6.6 0 12-4.9 12-11S22.6 4 16 4Z"/></svg>
 </a>
 
-<script src="script.js?v=20261020a" defer></script>
+<script src="script.js?v=20261020b" defer></script>
 </body>
 </html>

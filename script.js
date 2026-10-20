@@ -68,7 +68,7 @@ const obsNote = new IntersectionObserver(
 obsNote.observe(note);
 
 const blocos = document.querySelectorAll(
-  ".secao__cab, .lado, .card, .vitrine__palco, .vitrine__cta, .passos li, .duelo__card, .duelo__cta, .pilar, .presencial__cta, .motivos__cab, .faq, .final__in"
+  ".secao__cab, .barra, .spec, .card, .vitrine__palco, .vitrine__cta, .passos li, .duelo__card, .duelo__cta, .pilar, .presencial__cta, .motivos__cab, .faq, .final__in"
 );
 const observador = new IntersectionObserver(
   (entradas) => {
@@ -90,7 +90,7 @@ const comparar = document.getElementById("comparar");
 const obsComparar = new IntersectionObserver(
   (entradas) => {
     if (!entradas[0].isIntersecting) return;
-    comparar.querySelectorAll(".carga i").forEach((b) => (b.style.width = b.dataset.alvo + "%"));
+    comparar.querySelectorAll(".barra__trilho i").forEach((b) => (b.style.width = b.dataset.alvo + "%"));
     obsComparar.disconnect();
   },
   { threshold: 0.4 }
