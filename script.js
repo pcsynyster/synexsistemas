@@ -5,7 +5,6 @@ const MENSAGENS = {
   diagnostico: "Olá! Vim pelo site da Synex Sistemas e gostaria de solicitar o diagnóstico gratuito da minha presença digital.",
   contato: "Olá! Vim pelo site da Synex Sistemas e quero saber como ter um site ou sistema sob medida para o meu negócio.",
   duvida: "Olá! Vim pelo site da Synex Sistemas e tenho uma dúvida:",
-  modernizar: "Olá! Vi o comparativo no site da Synex Sistemas e quero modernizar o atendimento da minha empresa.",
   presencial: "Olá! Sou da região de Natal/Parnamirim e gostaria de agendar uma reunião presencial para conhecer as soluções da Synex para a minha empresa.",
   parcelar: "Olá! Vi no site da Synex Sistemas que dá para parcelar em até 12x e quero saber mais sobre o meu projeto.",
   vitrine: "Olá! Vi a demonstração de atendimento automático no site da Synex Sistemas e quero uma automação assim no meu negócio.",
@@ -68,7 +67,7 @@ const obsNote = new IntersectionObserver(
 obsNote.observe(note);
 
 const blocos = document.querySelectorAll(
-  ".secao__cab, .barra, .spec, .card, .vitrine__palco, .vitrine__cta, .passos li, .duelo__card, .duelo__cta, .pilar, .presencial__cta, .motivos__cab, .faq, .final__in"
+  ".secao__cab, .barra, .spec, .card, .vitrine__palco, .vitrine__cta, .passos li, .etapa, .pilar, .presencial__cta, .motivos__cab, .faq, .final__in"
 );
 const observador = new IntersectionObserver(
   (entradas) => {
@@ -96,6 +95,17 @@ const obsComparar = new IntersectionObserver(
   { threshold: 0.4 }
 );
 obsComparar.observe(comparar);
+
+const trilha = document.getElementById("trilha");
+const obsTrilha = new IntersectionObserver(
+  (entradas) => {
+    if (!entradas[0].isIntersecting) return;
+    trilha.classList.add("ativa");
+    obsTrilha.disconnect();
+  },
+  { threshold: 0.35 }
+);
+obsTrilha.observe(trilha);
 
 const ICONES = {
   lampada: '<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/>',
