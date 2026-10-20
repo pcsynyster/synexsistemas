@@ -60,6 +60,7 @@ if (cena && !reduzMovimento) {
     site: cena.querySelector(".mac__site"),
     siteImg: cena.querySelector(".mac__site img"),
     legenda: cena.querySelector(".cena__legenda"),
+    textos: cena.querySelector(".cena__textos"),
     rolar: cena.querySelector(".cena__rolar"),
   };
 
@@ -73,11 +74,22 @@ if (cena && !reduzMovimento) {
   let atual = 0;
   let ultimoQuadro = 0;
   let rodando = false;
+  let escalaFim = 0.64;
+  let descer = 0;
   const visiveis = new Map();
 
   function medir() {
     inicio = cena.getBoundingClientRect().top + window.scrollY;
     percurso = Math.max(cena.offsetHeight - window.innerHeight, 1);
+    const altMac = el.mac.offsetHeight;
+    const base = el.mac.offsetTop + altMac;
+    const limiteTexto = el.textos.offsetTop + el.final.offsetHeight + 28;
+    const limiteBase = el.legenda.offsetTop - 12;
+    const tampa = 0.84;
+    escalaFim = 0.64;
+    descer = Math.max(0, Math.min(limiteTexto - (base - altMac * escalaFim * tampa), limiteBase - base));
+    const espaco = base + descer - limiteTexto;
+    if (espaco < altMac * escalaFim * tampa) escalaFim = Math.max(espaco / (altMac * tampa), 0.3);
   }
 
   const lerAlvo = () => limitar((window.scrollY - inicio) / percurso);
@@ -104,8 +116,8 @@ if (cena && !reduzMovimento) {
     mostrar(el.frase2, entra2 * (1 - sai2), 30 * (1 - entra2) - 40 * sai2);
     mostrar(el.final, entra3, 30 * (1 - entra3));
 
-    const escala = (0.94 + 0.06 * abre) * (1 - 0.36 * recua);
-    el.mac.style.transform = `translate3d(-50%, 0, 0) scale(${escala.toFixed(4)})`;
+    const escala = (0.94 + 0.06 * abre) * (1 - (1 - escalaFim) * recua);
+    el.mac.style.transform = `translate3d(-50%, ${(descer * recua).toFixed(1)}px, 0) scale(${escala.toFixed(4)})`;
     el.fechado.style.opacity = abre < 1 ? 1 : 0;
     el.aberto.style.opacity = abre.toFixed(3);
     el.tela.style.opacity = trecho(p, 0.26, 0.4).toFixed(3);
@@ -148,6 +160,10 @@ if (cena && !reduzMovimento) {
     [el.aberto, el.siteImg, cena.querySelector(".mac__fundo")].forEach((img) => img.decode?.().catch(() => {}));
   });
 
+  document.fonts?.ready.then(() => {
+    medir();
+    aoRolar();
+  });
   medir();
   atual = alvo = lerAlvo();
   desenhar(atual);
