@@ -17,7 +17,6 @@ Sistema online (SaaS) para estéticas automotivas, centros de detalhamento e lav
 - Preço de lançamento: R$ 99 por mês, sem taxa de adesão, com 14 dias grátis para testar.
 - Funciona no navegador do celular, sem instalar nada. Implantação presencial em Natal e região.
 - Recursos: entrada pela placa, vistoria com até 6 fotos, acompanhamento do veículo por link no WhatsApp, aviso de pronto com valor e chave Pix, agenda online 24h com link próprio da loja, confirmação de agendamento em um toque, resumo do faturamento e controle total de serviços, valores, horários e folgas.
-- Tecnologia: Next.js, TypeScript, Tailwind CSS e Supabase, hospedado na Vercel. Multiempresa, com os dados de cada estética isolados.
 
 ## Como funciona
 
