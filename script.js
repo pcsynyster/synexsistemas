@@ -8,6 +8,7 @@ const MENSAGENS = {
   presencial: "Olá! Sou da região de Natal/Parnamirim e gostaria de agendar uma reunião presencial para conhecer as soluções da Synex para a minha empresa.",
   parcelar: "Olá! Vi no site da Synex Sistemas que dá para parcelar em até 12x e quero saber mais sobre o meu projeto.",
   vitrine: "Olá! Vi a demonstração de atendimento automático no site da Synex Sistemas e quero uma automação assim no meu negócio.",
+  auto: "Olá! Quero testar o Synex Auto na minha estética.",
 };
 
 const linkWhatsApp = (texto) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`;
