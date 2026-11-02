@@ -570,3 +570,36 @@ main { padding-top: 56px; }
 h1, h2, h3 { text-wrap: balance; }
 a, button, .btn { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
 .motivos__trilho:focus-visible { outline: 2px solid #2997ff; outline-offset: -2px; border-radius: 12px; }
+
+.topo.rolou, .topo.sobre-cena {
+  background: linear-gradient(180deg, rgba(36, 36, 40, 0.66), rgba(22, 22, 25, 0.58));
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.04), 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+.flutuante {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.03) 55%, rgba(255, 255, 255, 0.08)), rgba(28, 28, 30, 0.62);
+  -webkit-backdrop-filter: blur(18px) saturate(190%);
+  backdrop-filter: blur(18px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.45), inset 0 -1px 1px rgba(255, 255, 255, 0.08), 0 10px 30px rgba(0, 0, 0, 0.28);
+}
+.flutuante svg { fill: #ffffff; filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25)); }
+@media (max-width: 960px) {
+  .menu {
+    background: linear-gradient(180deg, rgba(34, 34, 38, 0.95), rgba(22, 22, 25, 0.94));
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 24px 48px rgba(0, 0, 0, 0.35);
+  }
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .topo.rolou, .topo.sobre-cena { background: rgba(18, 18, 20, 0.96); }
+  .flutuante { background: rgba(28, 28, 30, 0.92); }
+  .menu { background: rgba(18, 18, 20, 0.97); }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .topo.rolou, .topo.sobre-cena { background: rgba(18, 18, 20, 0.97); -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .flutuante { background: #1c1c1e; -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .menu { background: rgba(18, 18, 20, 0.98); -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
