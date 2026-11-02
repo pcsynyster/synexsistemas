@@ -206,7 +206,8 @@ main { padding-top: 56px; }
 .clientes a { opacity: 0.8; transition: opacity 0.25s, transform 0.25s; }
 .clientes a:hover { opacity: 1; transform: translateY(-2px); }
 .clientes img { height: 36px; width: auto; }
-.clientes a:last-child img { height: 46px; }
+.clientes .clientes__marrada img { height: 46px; }
+.clientes .clientes__bs img { height: 44px; }
 
 /* segmentos */
 .segmentos { border-block: 1px solid var(--borda); background: var(--bg-2); }

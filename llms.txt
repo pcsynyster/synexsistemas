@@ -26,6 +26,7 @@
 
 - [MV LEDs](https://mvleds.com.br): catálogo digital de iluminação automotiva com pedido pelo WhatsApp (Parnamirim/RN).
 - [Marrada Sport Club](https://marradasportclub.com.br): site de complexo esportivo com reservas pelo WhatsApp (Parnamirim/RN).
+- [BS Fitness](https://lojabsfitness.com.br): loja de moda fitness feminina com carrinho e pedido pelo WhatsApp (Parnamirim/RN).
 
 ## Contato
 
