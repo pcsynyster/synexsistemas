@@ -305,7 +305,7 @@ const ACOES = {
     vitrine.chat.querySelector(".balao--eu:last-of-type .checks")?.classList.add("lido");
   },
   digitar() {
-    vitrine.status.textContent = "digitando...";
+    vitrine.status.textContent = "digitando…";
     vitrine.status.classList.add("digitando");
     const bolha = document.createElement("div");
     bolha.className = "digitando-bolha";
@@ -357,19 +357,25 @@ function quadro(agora) {
   if (vitrine.rodando) requestAnimationFrame(quadro);
 }
 
-new IntersectionObserver(
-  (entradas) => {
-    vitrine.visivel = entradas[0].isIntersecting;
-    if (vitrine.visivel && !vitrine.rodando) {
-      vitrine.rodando = true;
-      vitrine.ultimo = 0;
-      requestAnimationFrame(quadro);
-    }
-  },
-  { threshold: 0.3 }
-).observe(vitrine.celular);
-
 carregarCenario(0);
+
+if (reduzMovimento) {
+  ACOES.enviar();
+  ACOES.lido();
+  ACOES.responder();
+} else {
+  new IntersectionObserver(
+    (entradas) => {
+      vitrine.visivel = entradas[0].isIntersecting;
+      if (vitrine.visivel && !vitrine.rodando) {
+        vitrine.rodando = true;
+        vitrine.ultimo = 0;
+        requestAnimationFrame(quadro);
+      }
+    },
+    { threshold: 0.3 }
+  ).observe(vitrine.celular);
+}
 
 const trilho = document.getElementById("motivosTrilho");
 const setas = document.querySelectorAll(".motivos__seta");

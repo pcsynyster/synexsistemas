@@ -580,7 +580,7 @@ main { padding-top: 56px; }
 .auto__acoes { margin-top: 34px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 18px 30px; }
 .auto__btn { background: #f5f5f7; color: #1d1d1f; padding: 16px 30px; font-size: 17px; }
 .auto__btn:hover { background: #fff; transform: translateY(-2px); }
-.auto__para { margin-top: 22px; font-size: 15px; color: #6e6e73; }
+.auto__para { margin-top: 22px; font-size: 15px; color: #86868b; }
 
 .auto__palco { position: relative; margin: 70px auto 0; max-width: 760px; height: 640px; display: flex; justify-content: center; }
 .auto__palco::before { content: ""; position: absolute; left: 50%; top: 46%; width: 620px; height: 620px; transform: translate(-50%, -50%); border-radius: 50%; background: radial-gradient(closest-side, rgba(91, 92, 240, 0.28), rgba(74, 163, 255, 0.08) 60%, transparent); pointer-events: none; }
@@ -656,3 +656,7 @@ main { padding-top: 56px; }
 @media (prefers-reduced-motion: reduce) {
   .auto-acomp__etapas li { animation: none; color: #f5f5f7; }
 }
+
+h1, h2, h3 { text-wrap: balance; }
+a, button, .btn { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+.motivos__trilho:focus-visible { outline: 2px solid #2997ff; outline-offset: -2px; border-radius: 12px; }
