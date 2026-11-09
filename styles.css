@@ -405,7 +405,10 @@ main { padding-top: 56px; }
   .appico svg { width: 60px; height: 60px; }
     .card, .card--grande { padding: 30px 26px; }
   .hero__cta .btn { width: 100%; }
-  .clientes { gap: 14px 24px; }
+  .clientes { gap: 14px 16px; }
+  .clientes img { height: 30px; }
+  .clientes .clientes__marrada img { height: 40px; }
+  .clientes .clientes__bs img { height: 38px; }
   .clientes span { flex-basis: 100%; }
   .celular { width: 300px; height: 600px; }
     .vitrine__cta p { font-size: 17px; }
