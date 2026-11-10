@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Criação de Sites e Sistemas Sob Medida em Natal/RN | Synex Sistemas</title>
 <meta name="description" content="Criação de sites rápidos, catálogos digitais com pedido no WhatsApp e sistemas sob medida em Natal e Parnamirim (RN). Diagnóstico gratuito.">
-<meta name="theme-color" content="#0f2219">
-<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0b0b0b">
+<meta name="color-scheme" content="light">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Synex Sistemas">
 <meta property="og:title" content="Criação de Sites e Sistemas Sob Medida em Natal/RN | Synex Sistemas">
@@ -27,10 +27,9 @@
 <link rel="icon" href="assets/icone-48.png?v=2" type="image/png" sizes="48x48">
 <link rel="icon" href="assets/icone-192.png?v=2" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="assets/icone-180.png?v=2">
-<link rel="stylesheet" href="styles.css?v=20261110b">
+<link rel="stylesheet" href="styles.css?v=20261110c">
 <link rel="preload" as="image" href="assets/img/abertura/golfe.webp" imagesrcset="assets/img/abertura/golfe-p.webp 900w, assets/img/abertura/golfe.webp 1024w" imagesizes="100vw">
-<link rel="preload" as="font" href="fonts/bodoni-moda.woff2" type="font/woff2" crossorigin>
-<link rel="preload" as="font" href="fonts/bodoni-moda-italic.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="fonts/oswald.woff2" type="font/woff2" crossorigin>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -121,32 +120,47 @@
 
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
+<div class="intro" id="intro" aria-hidden="true">
+  <img class="intro__logo" src="assets/logo.webp?v=2" alt="" width="312" height="96">
+</div>
+
 <header class="topo" id="topo">
-  <div class="topo__in">
-    <a class="marca" href="#inicio" aria-label="Synex Sistemas, início">
-      <picture>
-        <source srcset="assets/logo.webp?v=2" type="image/webp">
-        <img src="assets/logo-sm.png?v=2" alt="Synex Sistemas" width="156" height="48" fetchpriority="high">
-      </picture>
-    </a>
-    <nav class="menu" id="menu" aria-label="Navegação principal">
-      <a href="#solucoes">Soluções</a>
-      <a href="#catalogo">Teste ao vivo</a>
-      <a href="#diferenciais">Comparativo</a>
-      <a href="#duvidas">Dúvidas</a>
-      <a class="btn btn--menta btn--menu" data-wa="oi" href="https://wa.me/5584991421656">Falar com Especialista</a>
-    </nav>
-    <button class="burger" id="burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
-      <span></span><span></span>
-    </button>
-  </div>
+  <button class="burger" id="burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+    <span></span><span></span>
+  </button>
+  <a class="marca" href="#inicio" aria-label="Synex Sistemas, início">
+    <img class="marca__clara" src="assets/logo.webp?v=2" alt="" width="156" height="48">
+    <img class="marca__escura" src="assets/logo-preto.webp" alt="" width="156" height="48">
+  </a>
+  <a class="topo__wa" data-wa="oi" href="https://wa.me/5584991421656" aria-label="Falar com a Synex no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c-4.7 0-8.5 3.5-8.5 7.8 0 1.9.7 3.6 2 5l-.8 3.7 3.9-1.3c1 .4 2.2.6 3.4.6 4.7 0 8.5-3.5 8.5-7.9S16.7 3.5 12 3.5Z"/></svg>
+  </a>
 </header>
 
-<main id="inicio">
-
-  <div class="faixa">
-    <p>Diagnóstico gratuito e parcelamento em até 12x no cartão. <a data-wa="diagnostico" href="https://wa.me/5584991421656">Falar com especialista <span aria-hidden="true">&rsaquo;</span></a></p>
+<div class="menu" id="menu" aria-label="Menu">
+  <nav class="menu__links" aria-label="Navegação principal">
+    <a href="#inicio">Início</a>
+    <a href="#solucoes">Soluções</a>
+    <a href="#catalogo">Teste ao vivo</a>
+    <a href="#diferenciais">Comparativo</a>
+    <a href="#processo">Como trabalhamos</a>
+    <a href="#duvidas">Dúvidas</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <div class="menu__foto"><img src="assets/img/abertura/carro.webp" alt="" width="686" height="1033" loading="lazy" decoding="async"></div>
+  <div class="menu__social">
+    <a href="https://www.instagram.com/synexsistemas/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Synex"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" class="cheio"/></svg></a>
+    <a data-wa="oi" href="https://wa.me/5584991421656" aria-label="WhatsApp da Synex"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c-4.7 0-8.5 3.5-8.5 7.8 0 1.9.7 3.6 2 5l-.8 3.7 3.9-1.3c1 .4 2.2.6 3.4.6 4.7 0 8.5-3.5 8.5-7.9S16.7 3.5 12 3.5Z"/></svg></a>
   </div>
+  <div class="menu__rodape">
+    <a data-wa="oi" href="https://wa.me/5584991421656">Fale com a Synex</a>
+    <span>WhatsApp<br>(84) 99142-1656</span>
+    <span>Instagram<br>@synexsistemas</span>
+    <span>Synex Sistemas<br>Natal, Rio Grande do Norte</span>
+  </div>
+</div>
+
+<main id="inicio">
 
   <section class="abertura" id="conteudo" aria-labelledby="aberturaTitulo">
     <div class="abertura__fotos" aria-hidden="true">
@@ -154,58 +168,75 @@
       <img class="abertura__foto abertura__foto--compras" src="assets/img/abertura/compras.webp" srcset="assets/img/abertura/compras-p.webp 900w, assets/img/abertura/compras.webp 1470w" sizes="100vw" alt="" width="1470" height="980" loading="lazy" decoding="async">
       <img class="abertura__foto abertura__foto--carro" src="assets/img/abertura/carro.webp" alt="" width="686" height="1033" loading="lazy" decoding="async">
     </div>
-    <div class="abertura__moldura" aria-hidden="true"></div>
-    <div class="wrap abertura__in">
-      <p class="abertura__olho"><span>Synex Sistemas</span><i aria-hidden="true"></i><span>Natal &middot; RN</span></p>
-      <h1 class="abertura__titulo" id="aberturaTitulo">
-        <span class="abertura__linha"><span>Site que vende</span></span>
-        <span class="abertura__linha"><span>enquanto você</span></span>
-        <em class="abertura__assina"><span>descansa.</span></em>
-      </h1>
-      <p class="abertura__sub">Sites rápidos, catálogos com pedido no WhatsApp e sistemas sob medida, trabalhando por você 24 horas.</p>
-      <div class="hero__cta">
-        <a class="btn btn--menta" data-wa="diagnostico" href="https://wa.me/5584991421656">Fale com a Synex</a>
-        <a class="link-apple" href="#catalogo">Ver demonstração <span aria-hidden="true">&rsaquo;</span></a>
-      </div>
+    <div class="abertura__in">
+      <p class="olho">Synex Sistemas &middot; Natal RN</p>
+      <h1 class="abertura__titulo" id="aberturaTitulo">Site que vende enquanto você descansa</h1>
+      <a class="btn btn--branco" data-wa="diagnostico" href="https://wa.me/5584991421656">Fale com a Synex</a>
     </div>
-    <span class="abertura__rolar" aria-hidden="true">Role</span>
+    <a class="abertura__rolar" href="#oferta" aria-label="Rolar para o conteúdo"><span></span></a>
   </section>
 
-  <section class="hero" aria-label="Diagnóstico e projetos">
-    <div class="wrap hero__barra">
-      <div class="pilula">
-        <p><b>Diagnóstico gratuito.</b><span>Parcele o teu projeto em até 12x no cartão.</span></p>
-        <a class="btn btn--menta" data-wa="diagnostico" href="https://wa.me/5584991421656">Começar agora</a>
-      </div>
+  <section class="oferta" id="oferta" aria-label="Diagnóstico e projetos">
+    <div class="wrap oferta__in">
+      <p class="oferta__texto"><b>Diagnóstico gratuito.</b> Sites rápidos, catálogos com pedido no WhatsApp e sistemas sob medida, trabalhando por você 24 horas. Parcele o teu projeto em até 12x no cartão.</p>
+      <a class="btn btn--preto" data-wa="diagnostico" href="https://wa.me/5584991421656">Começar agora</a>
     </div>
-    <div class="wrap hero__rodape">
+    <div class="wrap">
       <ul class="garantias">
         <li>Diagnóstico sem custo</li>
         <li>Atendimento direto no WhatsApp</li>
         <li>Natal, Parnamirim e todo o Brasil</li>
       </ul>
       <div class="clientes">
-          <span>Projetos no ar</span>
-          <a href="https://mvleds.com.br" target="_blank" rel="noopener noreferrer"><img src="assets/img/cases/mvleds-mini.png" alt="MV LEDs" width="253" height="72" loading="lazy" decoding="async"></a>
-          <a class="clientes__marrada" href="https://marradasportclub.com.br" target="_blank" rel="noopener noreferrer"><img src="assets/img/cases/marrada-mini.png" alt="Marrada Sport Club" width="120" height="92" loading="lazy" decoding="async"></a>
-          <a class="clientes__bs" href="https://lojabsfitness.com.br" target="_blank" rel="noopener noreferrer"><img src="assets/img/cases/bsfitness-mini.png" alt="BS Fitness Moda Fitness" width="156" height="156" loading="lazy" decoding="async"></a>
-          <a class="clientes__bs" href="https://isabellebezerra.psc.br" target="_blank" rel="noopener noreferrer"><img src="assets/img/cases/isabelle-mini.png" alt="Isabelle Bezerra Psicóloga" width="156" height="156" loading="lazy" decoding="async"></a>
-        </div>
+        <span>Projetos no ar</span>
+        <a href="https://mvleds.com.br" target="_blank" rel="noopener noreferrer"><img src="assets/img/cases/mvleds-mini.png" alt="MV LEDs" width="253" height="72" loading="lazy" decoding="async"></a>
+        <a class="clientes__marrada" href="https://marradasportclub.com.br" target="_blank" rel="noopener noreferrer"><img src="assets/img/cases/marrada-mini.png" alt="Marrada Sport Club" width="120" height="92" loading="lazy" decoding="async"></a>
+        <a class="clientes__bs" href="https://lojabsfitness.com.br" target="_blank" rel="noopener noreferrer"><img src="assets/img/cases/bsfitness-mini.png" alt="BS Fitness Moda Fitness" width="156" height="156" loading="lazy" decoding="async"></a>
+        <a class="clientes__bs" href="https://isabellebezerra.psc.br" target="_blank" rel="noopener noreferrer"><img src="assets/img/cases/isabelle-mini.png" alt="Isabelle Bezerra Psicóloga" width="156" height="156" loading="lazy" decoding="async"></a>
+      </div>
     </div>
   </section>
 
-  <section class="segmentos claro" aria-label="Para quem é a Synex">
-    <div class="wrap segmentos__in">
-      <p class="segmentos__titulo">Feito para <em class="destaque">todos os negócios.</em></p>
-      <p class="segmentos__sub">Do autônomo à grande empresa, do comércio aos serviços: se o seu negócio precisa vender mais, a Synex constrói a estrutura certa para ele.</p>
+  <section class="editorial" id="sobre" aria-labelledby="sobreTitulo">
+    <div class="editorial__grade">
+      <header class="editorial__texto">
+        <p class="olho">Projeto real no ar</p>
+        <h2 id="sobreTitulo">Presença à altura</h2>
+        <p>O teu negócio merece uma presença digital à altura do teu trabalho. Cada site da Synex é desenhado e programado do zero, sem modelos prontos, para carregar rápido, passar confiança e levar o cliente direto ao teu WhatsApp.</p>
+      </header>
+      <figure class="editorial__fig editorial__fig--a">
+        <img src="assets/img/abertura/mvleds.webp" alt="Página inicial do catálogo da MV LEDS, criado pela Synex" width="1200" height="800" loading="lazy" decoding="async">
+        <figcaption>Catálogo da MV LEDS: o cliente escolhe os produtos, monta o pedido e envia pronto para o WhatsApp da loja, sem cadastro.</figcaption>
+      </figure>
+      <figure class="editorial__fig editorial__fig--b">
+        <img src="assets/img/abertura/mvleds-2.webp" alt="Vitrine de produtos com preços no catálogo da MV LEDS" width="1200" height="800" loading="lazy" decoding="async">
+        <figcaption>Produtos, preços e serviços organizados em uma vitrine que funciona perfeitamente no celular.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="espalhadas" aria-labelledby="todosTitulo">
+    <div class="espalhadas__fotos" aria-hidden="true">
+      <img class="ef ef--1" src="assets/img/abertura/compras-p.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
+      <img class="ef ef--2" src="assets/img/abertura/golfe-p.webp" alt="" width="900" height="599" loading="lazy" decoding="async">
+      <img class="ef ef--3" src="assets/img/abertura/mvleds.webp" alt="" width="1200" height="800" loading="lazy" decoding="async">
+      <img class="ef ef--4" src="assets/img/abertura/carro.webp" alt="" width="686" height="1033" loading="lazy" decoding="async">
+      <img class="ef ef--5" src="assets/img/abertura/mvleds-2.webp" alt="" width="1200" height="800" loading="lazy" decoding="async">
+      <img class="ef ef--6" src="assets/img/abertura/golfe-p.webp" alt="" width="900" height="599" loading="lazy" decoding="async">
+    </div>
+    <div class="espalhadas__texto">
+      <p class="olho">Para quem é</p>
+      <h2 id="todosTitulo">Feito para todos os negócios</h2>
+      <p>Do autônomo à grande empresa, do comércio aos serviços: se o seu negócio precisa vender mais, a Synex constrói a estrutura certa para ele.</p>
+      <a class="btn btn--preto" data-wa="oi" href="https://wa.me/5584991421656">Falar com especialista</a>
     </div>
   </section>
 
   <section class="secao specs" id="diferenciais">
     <div class="wrap">
       <header class="secao__cab">
-        <p class="rotulo specs__olho">Engenharia Web</p>
-        <h2>Construído para nunca falhar.</h2>
+        <p class="olho">Engenharia Web</p>
+        <h2>Construído para nunca falhar</h2>
         <p>Deixe para trás plataformas lentas, pesadas e vulneráveis. Desenvolvemos arquiteturas modernas preparadas para escala e segurança contínua.</p>
       </header>
 
@@ -242,32 +273,31 @@
     </div>
   </section>
 
-  <section class="secao claro" id="solucoes">
-    <div class="wrap">
-      <header class="secao__cab">
-        <p class="rotulo">Soluções</p>
+  <section class="secao solucoes" id="solucoes">
+    <div class="wrap solucoes__grade">
+      <header class="secao__cab secao__cab--esq">
+        <p class="olho">Soluções</p>
         <h2>O que construímos para a sua empresa</h2>
         <p>Criação de sites, catálogos digitais, sistemas web e suporte: quatro frentes que se conectam para atrair, vender, organizar e manter tudo no ar.</p>
       </header>
-
       <div class="cards">
-        <article class="card card--grande">
-          <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="9" width="38" height="30" rx="5"/><path d="M5 18h38M14 27h12M14 32h8"/></svg>
+        <article class="card">
+          <span class="card__num">I</span>
           <h3>Landing pages de alta performance</h3>
           <p>Carregamento instantâneo, otimizadas para tráfego pago e para captar contatos direto no seu WhatsApp.</p>
         </article>
-        <article class="card card--grande">
-          <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="4" width="20" height="40" rx="5"/><path d="M21 9h6M19 19h10M19 25h10M19 36h10"/></svg>
+        <article class="card">
+          <span class="card__num">II</span>
           <h3>Catálogos digitais inteligentes</h3>
           <p>O cliente monta o pedido sozinho e envia a lista estruturada, com itens, valores e endereço, direto no WhatsApp da loja.</p>
         </article>
         <article class="card">
-          <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="7" width="38" height="34" rx="5"/><path d="M16 7v34M24 30v6M31 22v14M38 15v21"/></svg>
+          <span class="card__num">III</span>
           <h3>Sistemas web e painéis administrativos</h3>
           <p>Painéis rápidos para controlar pedidos, agendamentos e estoque, aposentando planilhas manuais propensas a erro.</p>
         </article>
         <article class="card">
-          <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10z"/><path d="M17 24l5 5 9-10"/></svg>
+          <span class="card__num">IV</span>
           <h3>Infraestrutura e suporte contínuo</h3>
           <p>Hospedagem monitorada, certificado de segurança SSL e manutenção garantida depois da entrega.</p>
         </article>
@@ -275,13 +305,19 @@
     </div>
   </section>
 
-  <section class="secao vitrine claro claro--cinza" id="catalogo">
-    <div class="wrap">
-      <header class="secao__cab">
-        <p class="rotulo">Teste ao vivo</p>
-        <h2>Atendimento no piloto automático</h2>
-        <p>Assista: o pedido chega pronto no WhatsApp da empresa e a resposta sai sozinha, em qualquer tipo de negócio.</p>
-      </header>
+  <section class="secao vitrine" id="catalogo">
+    <div class="wrap vitrine__grade">
+      <div class="vitrine__texto">
+        <header class="secao__cab secao__cab--esq">
+          <p class="olho">Teste ao vivo</p>
+          <h2>Atendimento no piloto automático</h2>
+          <p>Assista: o pedido chega pronto no WhatsApp da empresa e a resposta sai sozinha, em qualquer tipo de negócio.</p>
+        </header>
+        <div class="vitrine__cta">
+          <p>Seu cliente pede em <strong>10 segundos</strong>. O pedido chega pronto e organizado no seu caixa sem você precisar digitar nada.</p>
+          <a class="btn btn--preto" data-wa="vitrine" href="https://wa.me/5584991421656">Quero uma automação assim</a>
+        </div>
+      </div>
 
       <div class="vitrine__palco">
         <div class="celular" id="vitrineCelular" aria-label="Demonstração automática de atendimento no WhatsApp.">
@@ -307,40 +343,35 @@
           </div>
         </div>
       </div>
-
-      <div class="vitrine__cta">
-        <p>Seu cliente pede em <strong>10 segundos</strong>. O pedido chega pronto e organizado no seu caixa sem você precisar digitar nada.</p>
-        <a class="btn btn--menta btn--grande" data-wa="vitrine" href="https://wa.me/5584991421656">Quero uma automação assim no meu negócio</a>
-      </div>
     </div>
   </section>
 
-  <section class="secao claro" id="processo">
+  <section class="secao processo" id="processo">
     <div class="wrap">
       <header class="secao__cab">
-        <p class="rotulo">Processo</p>
+        <p class="olho">Processo</p>
         <h2>Como trabalhamos</h2>
         <p>Um processo transparente, do primeiro contato até o site no ar.</p>
       </header>
 
-      <ol class="trilha trilha--claro" id="trilha">
+      <ol class="trilha" id="trilha">
         <li class="etapa">
-          <span class="etapa__no">01</span>
+          <span class="etapa__no">I</span>
           <h3>Diagnóstico técnico</h3>
           <p>Entendemos a rotina do seu negócio e o que realmente precisa ser resolvido.</p>
         </li>
         <li class="etapa">
-          <span class="etapa__no">02</span>
+          <span class="etapa__no">II</span>
           <h3>Desenvolvimento ágil</h3>
           <p>Engenharia focada no celular, com velocidade e conversão desde o primeiro dia.</p>
         </li>
         <li class="etapa">
-          <span class="etapa__no">03</span>
+          <span class="etapa__no">III</span>
           <h3>Testes e homologação</h3>
           <p>Testes de velocidade e validação do pedido no WhatsApp antes de ir ao ar.</p>
         </li>
         <li class="etapa">
-          <span class="etapa__no">04</span>
+          <span class="etapa__no">IV</span>
           <h3>Lançamento e suporte</h3>
           <p>Publicação com domínio próprio e acompanhamento ativo depois da entrega.</p>
         </li>
@@ -348,27 +379,24 @@
     </div>
   </section>
 
-  <section class="secao claro claro--cinza presencial" id="presencial">
+  <section class="secao presencial" id="presencial">
     <div class="wrap">
       <header class="secao__cab">
-        <p class="rotulo">Segurança &amp; Proximidade Local</p>
-        <h2>Reunião presencial, café na mesa e foco no seu negócio.</h2>
+        <p class="olho">Segurança &amp; Proximidade Local</p>
+        <h2>Reunião presencial, café na mesa e foco no seu negócio</h2>
         <p>Sabemos o valor da confiança. Para empresários da Grande Natal, alinhamos o projeto e fechamos a parceria cara a cara, diretamente com quem desenvolve.</p>
       </header>
 
       <div class="pilares">
         <article class="pilar">
-          <span class="pilar__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
           <h3>Reunião Presencial sem Custo</h3>
           <p>Atendimento presencial em Natal, Parnamirim e região metropolitana. Vamos até a sua empresa para entender sua operação real de perto.</p>
         </article>
         <article class="pilar">
-          <span class="pilar__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
           <h3>Contato Direto com quem Executa</h3>
           <p>Sem intermediários, atendentes genéricos ou terceirização. Você fala e alinha tudo diretamente com o desenvolvedor responsável pela estrutura.</p>
         </article>
         <article class="pilar">
-          <span class="pilar__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.4 8.4 8 9.5 4.6-1.1 8-4.5 8-9.5V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
           <h3>Segurança Jurídica &amp; Transparência</h3>
           <p>Contrato claro, prazos garantidos e nota fiscal. Um projeto estruturado para gerar retorno sem surpresas ou letras miúdas.</p>
         </article>
@@ -376,7 +404,7 @@
 
       <div class="presencial__cta">
         <p>Prefere alinhar tudo pessoalmente antes de tomar qualquer decisão?</p>
-        <a class="btn btn--menta btn--grande" data-wa="presencial" href="https://wa.me/5584991421656">Agendar Reunião Presencial</a>
+        <a class="btn btn--preto" data-wa="presencial" href="https://wa.me/5584991421656">Agendar reunião presencial</a>
         <small>Para empresas de outros estados ou cidades, realizamos o alinhamento completo via chamada de vídeo.</small>
       </div>
     </div>
@@ -385,39 +413,38 @@
   <section class="secao motivos" id="motivos">
     <div class="wrap">
       <header class="motivos__cab">
-        <h2>Motivos para fechar o seu projeto com a Synex.</h2>
-        <a class="motivos__link" data-wa="oi" href="https://wa.me/5584991421656">Falar com especialista <span aria-hidden="true">&rsaquo;</span></a>
+        <div>
+          <p class="olho">Por que a Synex</p>
+          <h2>Motivos para fechar o seu projeto com a Synex</h2>
+        </div>
+        <a class="motivos__link" data-wa="oi" href="https://wa.me/5584991421656">Falar com especialista</a>
       </header>
     </div>
     <div class="motivos__trilho" id="motivosTrilho" tabindex="0" aria-label="Motivos para fechar com a Synex">
-        <article class="motivo">
-          <p class="motivo__rotulo">Opções de pagamento</p>
-          <h3>Parcele em até 12x.</h3>
-          <p class="motivo__texto">Invista no seu site sem pesar no caixa. Parcelamento no cartão de crédito.</p>
-          <div class="motivo__arte" aria-hidden="true"><div class="cartao"><span class="cartao__chip"></span><span class="cartao__onda"></span><span class="cartao__marca"><img src="assets/img/marca-tampa.webp?v=2" alt="" width="120" height="120" loading="lazy" decoding="async"></span></div></div>
-          <a class="motivo__mais" data-wa="parcelar" href="https://wa.me/5584991421656" aria-label="Perguntar sobre o parcelamento no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></a>
-        </article>
-        <article class="motivo">
-          <p class="motivo__rotulo">Diagnóstico</p>
-          <h3>Comece sem custo.</h3>
-          <p class="motivo__texto">Analisamos sua presença digital e você recebe o valor fechado antes de qualquer decisão.</p>
-          <div class="motivo__arte" aria-hidden="true"><span class="appico"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="5.5"/><path d="m15 15 5 5"/><path d="M8.5 10.5h4M10.5 8.5v4"/></svg></span></div>
-          <a class="motivo__mais" data-wa="diagnostico" href="https://wa.me/5584991421656" aria-label="Solicitar diagnóstico gratuito no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></a>
-        </article>
-        <article class="motivo">
-          <p class="motivo__rotulo">Publicação</p>
-          <h3>Tudo no ar com você.</h3>
-          <p class="motivo__texto">Domínio próprio, certificado de segurança e hospedagem rápida. Sem dor de cabeça técnica.</p>
-          <div class="motivo__arte" aria-hidden="true"><span class="appico"><svg viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/><circle cx="12" cy="15.5" r="1.4"/></svg></span></div>
-          <a class="motivo__mais" data-wa="oi" href="https://wa.me/5584991421656" aria-label="Tirar dúvidas sobre publicação no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></a>
-        </article>
-        <article class="motivo">
-          <p class="motivo__rotulo">Suporte</p>
-          <h3>Acompanhamento de verdade.</h3>
-          <p class="motivo__texto">Depois da entrega, ajustes e atualizações direto com quem desenvolveu o seu projeto.</p>
-          <div class="motivo__arte" aria-hidden="true"><span class="appico"><svg viewBox="0 0 24 24"><path d="M5 6.5A2.5 2.5 0 0 1 7.5 4h9A2.5 2.5 0 0 1 19 6.5v7a2.5 2.5 0 0 1-2.5 2.5H11l-4 3.5V16h0.5A2.5 2.5 0 0 1 5 13.5z"/><path d="M9 9.5h6M9 12.5h4"/></svg></span></div>
-          <a class="motivo__mais" data-wa="oi" href="https://wa.me/5584991421656" aria-label="Falar sobre suporte no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></a>
-        </article>
+      <article class="motivo">
+        <p class="motivo__rotulo">Opções de pagamento</p>
+        <h3>Parcele em até 12x</h3>
+        <p class="motivo__texto">Invista no seu site sem pesar no caixa. Parcelamento no cartão de crédito.</p>
+        <a class="motivo__mais" data-wa="parcelar" href="https://wa.me/5584991421656">Perguntar sobre o parcelamento</a>
+      </article>
+      <article class="motivo">
+        <p class="motivo__rotulo">Diagnóstico</p>
+        <h3>Comece sem custo</h3>
+        <p class="motivo__texto">Analisamos sua presença digital e você recebe o valor fechado antes de qualquer decisão.</p>
+        <a class="motivo__mais" data-wa="diagnostico" href="https://wa.me/5584991421656">Solicitar diagnóstico</a>
+      </article>
+      <article class="motivo">
+        <p class="motivo__rotulo">Publicação</p>
+        <h3>Tudo no ar com você</h3>
+        <p class="motivo__texto">Domínio próprio, certificado de segurança e hospedagem rápida. Sem dor de cabeça técnica.</p>
+        <a class="motivo__mais" data-wa="oi" href="https://wa.me/5584991421656">Tirar dúvidas</a>
+      </article>
+      <article class="motivo">
+        <p class="motivo__rotulo">Suporte</p>
+        <h3>Acompanhamento de verdade</h3>
+        <p class="motivo__texto">Depois da entrega, ajustes e atualizações direto com quem desenvolveu o seu projeto.</p>
+        <a class="motivo__mais" data-wa="oi" href="https://wa.me/5584991421656">Falar sobre suporte</a>
+      </article>
     </div>
     <div class="wrap motivos__nav">
       <button type="button" class="motivos__seta" data-dir="-1" aria-label="Anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 6-6 6 6 6"/></svg></button>
@@ -425,10 +452,10 @@
     </div>
   </section>
 
-  <section class="secao claro" id="duvidas">
+  <section class="secao duvidas-secao" id="duvidas">
     <div class="wrap duvidas">
       <header class="secao__cab secao__cab--esq">
-        <p class="rotulo">Dúvidas</p>
+        <p class="olho">Dúvidas</p>
         <h2>Perguntas frequentes</h2>
         <p>Não encontrou a sua? Pergunte direto no WhatsApp.</p>
         <a class="link-seta" data-wa="duvida" href="https://wa.me/5584991421656">Fazer uma pergunta</a>
@@ -460,10 +487,12 @@
   </section>
 
   <section class="final" id="contato">
+    <img class="final__foto" src="assets/img/abertura/compras.webp" srcset="assets/img/abertura/compras-p.webp 900w, assets/img/abertura/compras.webp 1470w" sizes="100vw" alt="" width="1470" height="980" loading="lazy" decoding="async">
     <div class="wrap final__in">
+      <p class="olho">Contato</p>
       <h2>Vamos colocar o seu negócio para vender mais?</h2>
       <p>Fale direto com a Synex. Respondemos pelo WhatsApp e fazemos um diagnóstico gratuito da sua presença digital.</p>
-      <a class="btn btn--menta btn--grande" data-wa="contato" href="https://wa.me/5584991421656">Chamar no WhatsApp</a>
+      <a class="btn btn--branco" data-wa="contato" href="https://wa.me/5584991421656">Chamar no WhatsApp</a>
       <p class="final__fone">(84) 99142-1656</p>
       <a class="final__insta" href="https://www.instagram.com/synexsistemas/" target="_blank" rel="noopener noreferrer">
         <span>Acompanhe os bastidores e os projetos no Instagram</span>
@@ -475,14 +504,8 @@
 </main>
 
 <footer class="rodape">
-  <div class="wrap rodape__grade">
-    <div>
-      <picture>
-        <source srcset="assets/logo.webp?v=2" type="image/webp">
-        <img src="assets/logo-sm.png?v=2" alt="Synex Sistemas" width="156" height="48" loading="lazy" decoding="async">
-      </picture>
-      <p>Criação de sites, catálogos digitais e sistemas sob medida para empresas de Natal, Parnamirim e região.</p>
-    </div>
+  <div class="rodape__topo">
+    <img src="assets/logo-preto.webp" alt="Synex Sistemas" width="156" height="48" loading="lazy" decoding="async">
     <nav aria-label="Rodapé">
       <a href="#solucoes">Soluções</a>
       <a href="#catalogo">Teste ao vivo</a>
@@ -490,17 +513,13 @@
       <a href="#processo">Como trabalhamos</a>
       <a href="#duvidas">Dúvidas</a>
     </nav>
-    <div>
-      <p>WhatsApp</p>
-      <a href="https://wa.me/5584991421656" data-wa="oi">(84) 99142-1656</a>
-      <p class="rodape__insta">Instagram</p>
-      <a href="https://www.instagram.com/synexsistemas/" target="_blank" rel="noopener noreferrer">@synexsistemas</a>
-      <p class="rodape__local">Natal, Rio Grande do Norte</p>
-    </div>
   </div>
-  <div class="wrap rodape__fim">
-    <p>&copy; <span id="ano">2026</span> Synex Sistemas. Todos os direitos reservados.</p>
-    <p class="badge">Desenvolvido com máxima performance e código limpo pela Synex Sistemas</p>
+  <div class="rodape__grade">
+    <a data-wa="oi" href="https://wa.me/5584991421656">Fale com a Synex</a>
+    <p>WhatsApp<br><a data-wa="oi" href="https://wa.me/5584991421656">(84) 99142-1656</a></p>
+    <p>Instagram<br><a href="https://www.instagram.com/synexsistemas/" target="_blank" rel="noopener noreferrer">@synexsistemas</a></p>
+    <p>Synex Sistemas<br>Natal, Rio Grande do Norte</p>
+    <p class="rodape__direitos">&copy; <span id="ano">2026</span> Synex Sistemas. Todos os direitos reservados.<br>Criação de sites, catálogos digitais e sistemas sob medida.</p>
   </div>
 </footer>
 
@@ -508,6 +527,6 @@
   <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4C9.4 4 4 8.9 4 15c0 2.6 1 5 2.6 6.9L5.5 27l5.4-1.8c1.6.6 3.3.9 5.1.9 6.6 0 12-4.9 12-11S22.6 4 16 4Z"/></svg>
 </a>
 
-<script src="script.js?v=20261110b" defer></script>
+<script src="script.js?v=20261110c" defer></script>
 </body>
 </html>

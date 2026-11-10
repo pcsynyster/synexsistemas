@@ -23,14 +23,20 @@ document.querySelectorAll("[data-wa]").forEach((a) => {
 });
 
 const topo = document.getElementById("topo");
-const onScroll = () => topo.classList.toggle("rolou", window.scrollY > 20);
+const abertura = document.querySelector(".abertura");
+const onScroll = () => topo.classList.toggle("rolou", window.scrollY > abertura.offsetHeight - topo.offsetHeight - 10);
 onScroll();
 window.addEventListener("scroll", onScroll, { passive: true });
+window.addEventListener("resize", onScroll);
+
+const intro = document.getElementById("intro");
+if (intro) setTimeout(() => intro.remove(), 2800);
 
 const burger = document.getElementById("burger");
 const menu = document.getElementById("menu");
 const alternarMenu = (abrir) => {
   menu.classList.toggle("aberto", abrir);
+  document.body.classList.toggle("menu-aberto", abrir);
   burger.setAttribute("aria-expanded", String(abrir));
   burger.setAttribute("aria-label", abrir ? "Fechar menu" : "Abrir menu");
 };
@@ -47,7 +53,7 @@ document.getElementById("ano").textContent = new Date().getFullYear();
 
 const reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const blocos = document.querySelectorAll(
-  ".secao__cab, .barra, .spec, .card, .vitrine__palco, .vitrine__cta, .etapa, .pilar, .presencial__cta, .motivos__cab, .faq, .final__in"
+  ".secao__cab, .barra, .spec, .card, .vitrine__palco, .vitrine__cta, .etapa, .pilar, .presencial__cta, .motivos__cab, .faq, .final__in, .editorial__texto, .editorial__fig, .espalhadas__texto, .ef, .oferta__in"
 );
 const observador = new IntersectionObserver(
   (entradas) => {
