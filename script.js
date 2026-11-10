@@ -53,7 +53,7 @@ document.getElementById("ano").textContent = new Date().getFullYear();
 
 const reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const blocos = document.querySelectorAll(
-  ".secao__cab, .barra, .spec, .card, .vitrine__palco, .vitrine__cta, .etapa, .pilar, .presencial__cta, .motivos__cab, .faq, .final__in, .editorial__texto, .editorial__fig, .espalhadas__texto, .ef, .oferta__in"
+  ".secao__cab, .barra, .spec, .card, .vitrine__palco, .vitrine__cta, .etapa, .pilar, .presencial__cta, .motivos__cab, .faq, .final__in, .editorial__texto, .editorial__fig, .espalhadas__texto, .oferta__in"
 );
 const observador = new IntersectionObserver(
   (entradas) => {
