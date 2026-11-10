@@ -106,6 +106,7 @@ a, button { touch-action: manipulation; -webkit-tap-highlight-color: transparent
 .clientes img { height: 36px; width: auto; }
 .clientes .clientes__marrada img { height: 46px; }
 .clientes .clientes__bs img { height: 44px; }
+.clientes .clientes__mv { height: 44px; }
 
 .editorial { padding: 150px 0 120px; }
 .editorial__grade { width: min(1200px, 100% - 48px); margin-inline: auto; display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; }
@@ -358,6 +359,7 @@ body.menu-aberto .flutuante { opacity: 0; pointer-events: none; }
   .clientes img { height: 30px; }
   .clientes .clientes__marrada img { height: 40px; }
   .clientes .clientes__bs img { height: 38px; }
+  .clientes .clientes__mv { height: 38px; }
   .clientes span { flex-basis: 100%; text-align: center; }
   .menu__links a { font-size: 30px; }
   .rodape__topo, .rodape__grade { padding: 30px 20px; }
