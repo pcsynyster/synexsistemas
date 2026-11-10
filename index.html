@@ -27,7 +27,8 @@
 <link rel="icon" href="assets/icone-48.png?v=2" type="image/png" sizes="48x48">
 <link rel="icon" href="assets/icone-192.png?v=2" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="assets/icone-180.png?v=2">
-<link rel="stylesheet" href="styles.css?v=20261110a">
+<link rel="stylesheet" href="styles.css?v=20261110b">
+<link rel="preload" as="image" href="assets/img/abertura/golfe.webp" imagesrcset="assets/img/abertura/golfe-p.webp 900w, assets/img/abertura/golfe.webp 1024w" imagesizes="100vw">
 <link rel="preload" as="font" href="fonts/bodoni-moda.woff2" type="font/woff2" crossorigin>
 <link rel="preload" as="font" href="fonts/bodoni-moda-italic.woff2" type="font/woff2" crossorigin>
 <script type="application/ld+json">
@@ -148,6 +149,11 @@
   </div>
 
   <section class="abertura" id="conteudo" aria-labelledby="aberturaTitulo">
+    <div class="abertura__fotos" aria-hidden="true">
+      <img class="abertura__foto abertura__foto--golfe" src="assets/img/abertura/golfe.webp" srcset="assets/img/abertura/golfe-p.webp 900w, assets/img/abertura/golfe.webp 1024w" sizes="100vw" alt="" width="1024" height="682" fetchpriority="high">
+      <img class="abertura__foto abertura__foto--compras" src="assets/img/abertura/compras.webp" srcset="assets/img/abertura/compras-p.webp 900w, assets/img/abertura/compras.webp 1470w" sizes="100vw" alt="" width="1470" height="980" loading="lazy" decoding="async">
+      <img class="abertura__foto abertura__foto--carro" src="assets/img/abertura/carro.webp" alt="" width="686" height="1033" loading="lazy" decoding="async">
+    </div>
     <div class="abertura__moldura" aria-hidden="true"></div>
     <div class="wrap abertura__in">
       <p class="abertura__olho"><span>Synex Sistemas</span><i aria-hidden="true"></i><span>Natal &middot; RN</span></p>
@@ -502,6 +508,6 @@
   <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4C9.4 4 4 8.9 4 15c0 2.6 1 5 2.6 6.9L5.5 27l5.4-1.8c1.6.6 3.3.9 5.1.9 6.6 0 12-4.9 12-11S22.6 4 16 4Z"/></svg>
 </a>
 
-<script src="script.js?v=20261110a" defer></script>
+<script src="script.js?v=20261110b" defer></script>
 </body>
 </html>

@@ -478,3 +478,27 @@ main { padding-top: 64px; }
 @media (max-height: 940px) and (min-width: 761px) {
   .abertura__rolar { display: none; }
 }
+
+.abertura { background: var(--verde); }
+.abertura__fotos { position: absolute; inset: 0; overflow: hidden; }
+.abertura__fotos::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8, 20, 14, 0.62) 0%, rgba(8, 20, 14, 0.42) 38%, rgba(8, 20, 14, 0.58) 70%, rgba(8, 20, 14, 0.9) 100%), radial-gradient(ellipse 70% 60% at 50% 48%, rgba(8, 20, 14, 0.35), transparent 75%); }
+.abertura__foto { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.1); animation: foto-troca 21s linear infinite; }
+.abertura__foto--golfe { object-position: 50% 62%; opacity: 1; animation-delay: -1s; }
+.abertura__foto--compras { object-position: 62% 30%; animation-delay: 6s; }
+.abertura__foto--carro { object-position: 50% 74%; animation-delay: 13s; }
+@keyframes foto-troca {
+  0% { opacity: 0; transform: scale(1.1); }
+  5% { opacity: 1; }
+  33% { opacity: 1; }
+  39% { opacity: 0; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1); }
+}
+.abertura::before { z-index: 1; }
+.abertura__in, .abertura__rolar { z-index: 2; }
+.abertura__moldura { border-color: rgba(243, 237, 226, 0.22); }
+.abertura__titulo, .abertura__sub { text-shadow: 0 2px 30px rgba(5, 12, 9, 0.45); }
+.abertura__sub { color: #e4dccb; }
+.abertura__assina span { filter: drop-shadow(0 4px 24px rgba(5, 12, 9, 0.5)); }
+@media (prefers-reduced-motion: reduce) {
+  .abertura__foto--golfe { opacity: 1; transform: none; }
+}
