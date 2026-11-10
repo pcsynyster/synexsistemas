@@ -46,129 +46,6 @@ document.addEventListener("keydown", (e) => {
 document.getElementById("ano").textContent = new Date().getFullYear();
 
 const reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const cena = document.querySelector(".cena");
-
-if (cena && !reduzMovimento) {
-  const el = {
-    frase1: cena.querySelector('[data-frase="1"]'),
-    frase2: cena.querySelector('[data-frase="2"]'),
-    final: cena.querySelector('[data-frase="3"]'),
-    mac: document.getElementById("mac"),
-    fechado: cena.querySelector(".mac__foto--fechado"),
-    aberto: cena.querySelector(".mac__foto--aberto"),
-    tela: cena.querySelector(".mac__tela"),
-    site: cena.querySelector(".mac__site"),
-    siteImg: cena.querySelector(".mac__site img"),
-    legenda: cena.querySelector(".cena__legenda"),
-    textos: cena.querySelector(".cena__textos"),
-    rolar: cena.querySelector(".cena__rolar"),
-  };
-
-  const limitar = (v) => Math.min(Math.max(v, 0), 1);
-  const suave = (v) => v * v * (3 - 2 * v);
-  const trecho = (p, a, b) => suave(limitar((p - a) / (b - a)));
-
-  let inicio = 0;
-  let percurso = 1;
-  let alvo = 0;
-  let atual = 0;
-  let ultimoQuadro = 0;
-  let rodando = false;
-  let escalaFim = 0.64;
-  let descer = 0;
-  const visiveis = new Map();
-
-  function medir() {
-    inicio = cena.getBoundingClientRect().top + window.scrollY;
-    percurso = Math.max(cena.offsetHeight - window.innerHeight, 1);
-    const altMac = el.mac.offsetHeight;
-    const base = el.mac.offsetTop + altMac;
-    const limiteTexto = el.textos.offsetTop + el.final.offsetHeight + 28;
-    const limiteBase = el.legenda.offsetTop - 12;
-    const tampa = 0.84;
-    escalaFim = 0.64;
-    descer = Math.max(0, Math.min(limiteTexto - (base - altMac * escalaFim * tampa), limiteBase - base));
-    const espaco = base + descer - limiteTexto;
-    if (espaco < altMac * escalaFim * tampa) escalaFim = Math.max(espaco / (altMac * tampa), 0.3);
-  }
-
-  const lerAlvo = () => limitar((window.scrollY - inicio) / percurso);
-
-  function mostrar(alvoEl, valor, deslocamento) {
-    alvoEl.style.opacity = valor.toFixed(3);
-    alvoEl.style.transform = `translate3d(0, ${deslocamento.toFixed(1)}px, 0)`;
-    const vis = valor > 0.01;
-    if (visiveis.get(alvoEl) !== vis) {
-      visiveis.set(alvoEl, vis);
-      alvoEl.style.visibility = vis ? "visible" : "hidden";
-    }
-  }
-
-  function desenhar(p) {
-    const sai1 = trecho(p, 0.12, 0.22);
-    const abre = trecho(p, 0.12, 0.3);
-    const entra2 = trecho(p, 0.26, 0.36);
-    const sai2 = trecho(p, 0.54, 0.62);
-    const entra3 = trecho(p, 0.6, 0.72);
-    const recua = trecho(p, 0.58, 0.74);
-
-    mostrar(el.frase1, 1 - sai1, -40 * sai1);
-    mostrar(el.frase2, entra2 * (1 - sai2), 30 * (1 - entra2) - 40 * sai2);
-    mostrar(el.final, entra3, 30 * (1 - entra3));
-
-    const escala = (0.94 + 0.06 * abre) * (1 - (1 - escalaFim) * recua);
-    el.mac.style.transform = `translate3d(-50%, ${(descer * recua).toFixed(1)}px, 0) scale(${escala.toFixed(4)})`;
-    el.fechado.style.opacity = abre < 1 ? 1 : 0;
-    el.aberto.style.opacity = abre.toFixed(3);
-    el.tela.style.opacity = trecho(p, 0.26, 0.4).toFixed(3);
-    el.site.style.opacity = trecho(p, 0.46, 0.56).toFixed(3);
-    el.siteImg.style.transform = `translate3d(0, ${(-77.78 * trecho(p, 0.56, 0.96)).toFixed(3)}%, 0)`;
-    el.legenda.style.opacity = trecho(p, 0.64, 0.74).toFixed(3);
-    el.rolar.style.opacity = (1 - trecho(p, 0, 0.05)).toFixed(3);
-    topo.classList.toggle("sobre-cena", window.scrollY < inicio + percurso);
-  }
-
-  function quadroAbertura(agora) {
-    const dt = Math.min((agora - (ultimoQuadro || agora)) / 1000, 0.05);
-    ultimoQuadro = agora;
-    atual += (alvo - atual) * (1 - Math.exp(-dt / 0.11));
-    if (Math.abs(alvo - atual) < 0.0004) atual = alvo;
-    desenhar(atual);
-    if (atual !== alvo) {
-      requestAnimationFrame(quadroAbertura);
-    } else {
-      rodando = false;
-      ultimoQuadro = 0;
-    }
-  }
-
-  function aoRolar() {
-    alvo = lerAlvo();
-    if (rodando) return;
-    rodando = true;
-    requestAnimationFrame(quadroAbertura);
-  }
-
-  window.addEventListener("scroll", aoRolar, { passive: true });
-  window.addEventListener("resize", () => {
-    medir();
-    aoRolar();
-  });
-  window.addEventListener("load", () => {
-    medir();
-    aoRolar();
-    [el.aberto, el.siteImg, cena.querySelector(".mac__fundo")].forEach((img) => img.decode?.().catch(() => {}));
-  });
-
-  document.fonts?.ready.then(() => {
-    medir();
-    aoRolar();
-  });
-  medir();
-  atual = alvo = lerAlvo();
-  desenhar(atual);
-}
-
 const blocos = document.querySelectorAll(
   ".secao__cab, .barra, .spec, .card, .vitrine__palco, .vitrine__cta, .etapa, .pilar, .presencial__cta, .motivos__cab, .faq, .final__in"
 );
@@ -225,7 +102,7 @@ const CENARIOS = [
     icone: "lampada",
     cliente:
       "Olá! Gostaria de fechar o pedido do site:<br><b>2x</b> Refletor LED 100W (Branco Frio)<br><b>1x</b> Fita LED 5m<br><b>Total: R$ 389,70</b><br>Endereço: Capim Macio, Natal.",
-    resposta: "Pedido <b>#1042</b> confirmado! 💡 Separando no estoque. Segue a chave Pix com desconto:",
+    resposta: "Pedido <b>#1042</b> confirmado! Separando no estoque. Segue a chave Pix com desconto:",
     acao: "Copiar chave Pix",
   },
   {
@@ -234,7 +111,7 @@ const CENARIOS = [
     icone: "quadra",
     cliente:
       "Reserva solicitada pelo site:<br><b>Quadra de Beach Tennis</b><br>Quinta-feira às 19:00 (1h)<br>Aluguel de 2 raquetes<br><b>Total: R$ 90,00</b>",
-    resposta: "Horário reservado com sucesso! 🎾 Enviamos o comprovante para a portaria. Bom jogo!",
+    resposta: "Horário reservado com sucesso! Enviamos o comprovante para a portaria. Bom jogo!",
   },
   {
     nicho: "Moda & Varejo",
@@ -242,7 +119,7 @@ const CENARIOS = [
     icone: "camiseta",
     cliente:
       "Novo pedido via catálogo:<br><b>1x</b> Camiseta Oversized Preta (Tam G)<br><b>1x</b> Boné Strapback<br><b>Total: R$ 179,90</b><br>Retirada no balcão.",
-    resposta: "Pedido recebido! 📦 Já estamos separando seu pacote na loja. Te avisamos assim que estiver pronto para retirada!",
+    resposta: "Pedido recebido! Já estamos separando seu pacote na loja. Te avisamos assim que estiver pronto para retirada!",
   },
   {
     nicho: "Prestação de Serviços",
@@ -250,7 +127,7 @@ const CENARIOS = [
     icone: "agenda",
     cliente:
       "Agendamento pelo portal:<br><b>Avaliação Inicial com Especialista</b><br>Sexta às 14:30<br>Paciente: Lucas Silva",
-    resposta: "Olá, Lucas! Consulta pré-agendada na agenda do doutor. 📅 Confirmamos sua presença por aqui 2h antes!",
+    resposta: "Olá, Lucas! Consulta pré-agendada na agenda do doutor. Confirmamos sua presença por aqui 2h antes!",
   },
 ];
 
