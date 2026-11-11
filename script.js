@@ -274,3 +274,94 @@ setas.forEach((b) =>
 trilho.addEventListener("scroll", atualizarSetas, { passive: true });
 window.addEventListener("resize", atualizarSetas);
 atualizarSetas();
+
+(() => {
+  const cv = document.getElementById("particulas");
+  if (!cv) return;
+  const ctx = cv.getContext("2d");
+  const reduzir = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const PALAVRA = "SYNEX";
+  let w = 0, h = 0, dpr = 1, ps = [], visivel = true, raf = 0;
+  const mouse = { x: -999, y: -999, ativo: false };
+
+  const montar = () => {
+    const r = cv.getBoundingClientRect();
+    dpr = Math.min(devicePixelRatio || 1, 2);
+    w = r.width; h = r.height;
+    if (!w || !h) return;
+    cv.width = w * dpr; cv.height = h * dpr;
+    const off = document.createElement("canvas");
+    off.width = w; off.height = h;
+    const o = off.getContext("2d");
+    const fam = getComputedStyle(document.documentElement).getPropertyValue("--fonte-luxo") || "Georgia, serif";
+    let fs = h * 0.78;
+    o.font = `400 ${fs}px ${fam}`;
+    const m = o.measureText(PALAVRA).width;
+    if (m > w * 0.88) { fs *= (w * 0.88) / m; o.font = `400 ${fs}px ${fam}`; }
+    o.textAlign = "center"; o.textBaseline = "middle";
+    o.fillStyle = "#000";
+    o.strokeStyle = "#000"; o.lineJoin = "round"; o.lineWidth = fs * 0.045;
+    o.strokeText(PALAVRA, w / 2, h * 0.54);
+    o.fillText(PALAVRA, w / 2, h * 0.54);
+    const d = o.getImageData(0, 0, w, h).data;
+    const passo = w < 600 ? 4 : 5;
+    const alvos = [];
+    for (let y = 0; y < h; y += passo)
+      for (let x = 0; x < w; x += passo)
+        if (d[(y * w + x) * 4 + 3] > 128) alvos.push([x, y]);
+    ps = alvos.map(([x, y]) => {
+      const a = Math.random() * Math.PI * 2, dist = Math.max(w, h) * (0.4 + Math.random() * 0.6);
+      return { tx: x, ty: y, x: w / 2 + Math.cos(a) * dist, y: h / 2 + Math.sin(a) * dist, vx: 0, vy: 0, r: 1 + Math.random() * 0.9, c: Math.random() < 0.07 };
+    });
+  };
+
+  const quadro = () => {
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    const raio = Math.min(w, h) * 0.22, r2 = raio * raio;
+    for (const p of ps) {
+      let ax = (p.tx - p.x) * 0.045, ay = (p.ty - p.y) * 0.045;
+      if (mouse.ativo) {
+        const dx = p.x - mouse.x, dy = p.y - mouse.y, q = dx * dx + dy * dy;
+        if (q < r2 && q > 0.01) {
+          const f = (1 - Math.sqrt(q) / raio) * 7, n = Math.sqrt(q);
+          ax += (dx / n) * f; ay += (dy / n) * f;
+        }
+      }
+      p.vx = (p.vx + ax) * 0.82; p.vy = (p.vy + ay) * 0.82;
+      p.x += p.vx; p.y += p.vy;
+      ctx.fillStyle = p.c ? "#8a8a85" : "#0b0b0b";
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.2832); ctx.fill();
+    }
+    raf = visivel ? requestAnimationFrame(quadro) : 0;
+  };
+
+  const desenharEstatico = () => {
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    ctx.fillStyle = "#0b0b0b";
+    for (const p of ps) { ctx.beginPath(); ctx.arc(p.tx, p.ty, p.r, 0, 6.2832); ctx.fill(); }
+  };
+
+  const mover = (e) => {
+    const r = cv.getBoundingClientRect(), t = e.touches ? e.touches[0] : e;
+    mouse.x = t.clientX - r.left; mouse.y = t.clientY - r.top; mouse.ativo = true;
+  };
+  cv.addEventListener("pointermove", mover);
+  cv.addEventListener("pointerdown", mover);
+  cv.addEventListener("pointerleave", () => { mouse.ativo = false; });
+  cv.addEventListener("pointerup", () => { mouse.ativo = false; });
+
+  const iniciar = () => {
+    montar();
+    if (reduzir) { desenharEstatico(); return; }
+    if (!raf) raf = requestAnimationFrame(quadro);
+  };
+  (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(iniciar);
+  let t;
+  addEventListener("resize", () => { clearTimeout(t); t = setTimeout(iniciar, 150); });
+  new IntersectionObserver(([e]) => {
+    visivel = e.isIntersecting;
+    if (visivel && !raf && !reduzir) raf = requestAnimationFrame(quadro);
+  }).observe(cv);
+})();
